@@ -8,13 +8,13 @@
 <body>
 <x-dc>
 <helmet>
-<title>山田クリニック｜寝屋川市香里園の内科・糖尿病内科・放射線科・リハビリテーション科</title>
+<title>山田クリニック｜寝屋川市香里園の糖尿病内科・内科・放射線科</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{background:#ffffff;font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px}
+  *{margin:0;padding:0;box-sizing:border-box;font-feature-settings:'palt' 1;font-kerning:normal}
+  body{background:#ffffff;font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px;font-feature-settings:'palt' 1;font-kerning:normal;letter-spacing:.04em;text-rendering:optimizeLegibility}
   @keyframes scInd{0%{transform:scaleY(0);transform-origin:top;opacity:.3}45%{transform:scaleY(1);transform-origin:top;opacity:1}55%{transform:scaleY(1);transform-origin:bottom;opacity:1}100%{transform:scaleY(0);transform-origin:bottom;opacity:.3}}
   @keyframes fadeUp{from{transform:translateY(20px)}to{transform:translateY(0)}}
 
@@ -23,8 +23,8 @@
   @media (max-width:900px){
     .hd-mobile{display:block}
   }
-  .hd-mobile-panel{position:fixed;top:0;right:0;height:100%;width:80%;max-width:340px;background:#2a352f;z-index:80;transform:translateX(100%);transition:transform .42s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:90px 36px 40px;gap:4px;box-shadow:-12px 0 40px rgba(0,0,0,.2);overflow-y:auto;font-family:'Zen Kaku Gothic New',sans-serif}
-  .hd-mobile.open .hd-mobile-panel{transform:translateX(0)}
+  .hd-mobile-panel{position:fixed;top:0;right:0;height:100%;width:80%;max-width:340px;background:#2a352f;z-index:80;transform:translateX(100%);transition:transform .42s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:90px 36px 40px;gap:4px;overflow-y:auto;font-family:'Zen Kaku Gothic New',sans-serif}
+  .hd-mobile.open .hd-mobile-panel{transform:translateX(0);box-shadow:-12px 0 40px rgba(0,0,0,.2)}
   .hd-mobile-backdrop{position:fixed;inset:0;background:rgba(20,28,24,0);z-index:79;pointer-events:none;transition:background .42s ease}
   .hd-mobile.open .hd-mobile-backdrop{background:rgba(20,28,24,.42);pointer-events:auto}
   .hd-mobile-panel a{color:#e7eeec;font-size:17px;letter-spacing:.06em;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
@@ -55,6 +55,7 @@
     .sec-h2{font-size:26px !important}
     .brsp-top{display:inline !important}
     .sec-care{padding:44px 7% 56px !important}
+    .news-bar{gap:18px !important;padding:20px 7% !important}
     .hero-copy .btn-line{margin-top:26px !important;gap:24px !important;padding:12px 24px !important;font-size:14px !important}
     .sec-dept{padding:64px 7% !important}
     .ha-hours{padding:60px 7% !important}
@@ -139,8 +140,6 @@
   <div class="kv-stage">
     <div ref="{{ sentinelRef }}" style="position:absolute;top:40px;left:0;width:1px;height:1px;pointer-events:none;"></div>
     <div class="kv-slide is-active"><div class="kv-img" id="kv3"></div></div>
-    <div class="kv-slide"><div class="kv-img" id="kv2"></div></div>
-    <div class="kv-slide"><div class="kv-img" id="kv1"></div></div>
     <div class="kv-slide"><div class="kv-img" id="kv4"></div></div>
 
     <!-- soft wash on the left so copy stays legible over bright photos (desktop) -->
@@ -171,7 +170,7 @@
         <a href="about.html" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;white-space:nowrap;" style-hover="opacity:.6;border-bottom:1px solid currentColor;">当院について</a>
         <a href="first-visit.html" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;white-space:nowrap;" style-hover="opacity:.6;border-bottom:1px solid currentColor;">はじめての方へ</a>
       </div>
-      <a href="#access" class="hd-cta" style="display:flex;align-items:center;gap:10px;background:#2f3d37;color:#fff;border:1px solid #2f3d37;padding:12px 24px;border-radius:999px;font-size:13.5px;letter-spacing:.06em;white-space:nowrap;position:relative;z-index:1;">アクセス <span style="font-family:'Jost',sans-serif;">→</span></a>
+      <a href="first-visit.html#access" class="hd-cta" style="display:flex;align-items:center;gap:10px;background:#2f3d37;color:#fff;border:1px solid #2f3d37;padding:12px 24px;border-radius:999px;font-size:13.5px;letter-spacing:.06em;white-space:nowrap;position:relative;z-index:1;">アクセス <span style="font-family:'Jost',sans-serif;">→</span></a>
       <button class="hd-toggle" onClick="{{ toggleMenu }}" aria-label="メニュー" style="mix-blend-mode:difference;align-items:center;gap:9px;height:42px;background:transparent;border:0;cursor:pointer;padding:0;position:relative;z-index:1;">
         <span style="display:flex;flex-direction:column;gap:5px;"><span style="display:block;width:24px;height:2px;background:#fff;"></span><span style="display:block;width:24px;height:2px;background:#fff;"></span><span style="display:block;width:24px;height:2px;background:#fff;"></span></span>
         <span style="font-size:11px;letter-spacing:.1em;color:#fff;">メニュー</span>
@@ -190,7 +189,7 @@
         <a href="about.html" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;" style-hover="opacity:.6;border-bottom:1px solid #2f3d37;">当院について</a>
         <a href="first-visit.html" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;" style-hover="opacity:.6;border-bottom:1px solid #2f3d37;">はじめての方へ</a>
       </div>
-      <a href="#access" class="hd2-cta" style="display:inline-flex;align-items:center;gap:8px;background:#2f3d37;color:#fff;padding:11px 22px;border-radius:999px;font-size:13px;transition:background .35s ease;" style-hover="background:#7f9a91">アクセス <span style="font-family:'Jost',sans-serif;">→</span></a>
+      <a href="first-visit.html#access" class="hd2-cta" style="display:inline-flex;align-items:center;gap:8px;background:#2f3d37;color:#fff;padding:11px 22px;border-radius:999px;font-size:13px;transition:background .35s ease;" style-hover="background:#7f9a91">アクセス <span style="font-family:'Jost',sans-serif;">→</span></a>
       <button class="hd2-toggle" onClick="{{ toggleMenu }}" aria-label="メニュー" style="align-items:center;gap:9px;height:42px;background:transparent;border:0;cursor:pointer;padding:0;"><span style="display:flex;flex-direction:column;gap:5px;"><span style="display:block;width:24px;height:2px;background:#26312c;"></span><span style="display:block;width:24px;height:2px;background:#26312c;"></span><span style="display:block;width:24px;height:2px;background:#26312c;"></span></span><span style="font-size:11px;letter-spacing:.1em;color:#26312c;">メニュー</span></button>
     </div>
   </div>
@@ -215,7 +214,7 @@
     <a href="about.html" onClick="{{ closeMenu }}">当院について</a>
     <a href="first-visit.html" onClick="{{ closeMenu }}">はじめての方へ</a>
     <a href="#hours" onClick="{{ closeMenu }}">診察時間</a>
-    <a href="#access" onClick="{{ closeMenu }}" style="margin-top:24px;border:0 !important;background:#7f9a91;color:#fff !important;text-align:center;border-radius:999px;padding:15px 0 !important;font-size:16px !important;">アクセス</a>
+    <a href="first-visit.html#access" onClick="{{ closeMenu }}" style="margin-top:24px;border:0 !important;background:#7f9a91;color:#fff !important;text-align:center;border-radius:999px;padding:15px 0 !important;font-size:16px !important;">アクセス</a>
     <div class="hd-mobile-foot" style="margin-top:auto;padding-top:28px;display:flex;flex-direction:column;gap:12px;">
       <a href="privacy.html" onClick="{{ closeMenu }}">情報セキュリティ基本方針</a>
       <a href="facility.html" onClick="{{ closeMenu }}">施設基準</a>
@@ -260,11 +259,10 @@
         <h2 class="sec-h2" style="font-weight:400;font-size:32px;letter-spacing:.05em;color:#26312c;">診療科のご案内</h2>
       </div>
     </div>
-    <div class="dept-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#e3e9e6;border:1px solid #e3e9e6;max-width:1180px;margin:0 auto;">
-      <div style="background:#fff;padding:40px 36px;"><div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#aeb8b3;">01</div><div style="font-size:19px;letter-spacing:.04em;margin:14px 0 9px;">内科</div><p style="font-size:18px;line-height:1.85;color:#737d77;">発熱・かぜ・腹痛など、日常の体調不良全般を幅広く診療します。</p></div>
-      <div style="background:#fff;padding:40px 36px;"><div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#aeb8b3;">02</div><div style="font-size:19px;letter-spacing:.04em;margin:14px 0 9px;">糖尿病内科</div><p style="font-size:18px;line-height:1.85;color:#737d77;">血糖コントロールから合併症の予防まで、糖尿病を継続的に管理します。</p></div>
+    <div class="dept-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e3e9e6;border:1px solid #e3e9e6;max-width:1180px;margin:0 auto;">
+      <div style="background:#fff;padding:40px 36px;"><div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#aeb8b3;">01</div><div style="font-size:19px;letter-spacing:.04em;margin:14px 0 9px;">糖尿病内科</div><p style="font-size:18px;line-height:1.85;color:#737d77;">血糖コントロールから合併症の予防まで糖尿病を継続的に管理し、甲状腺や内分泌疾患の診療も行います。</p></div>
+      <div style="background:#fff;padding:40px 36px;"><div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#aeb8b3;">02</div><div style="font-size:19px;letter-spacing:.04em;margin:14px 0 9px;">内科</div><p style="font-size:18px;line-height:1.85;color:#737d77;">発熱・かぜ・腹痛など、日常の体調不良全般を幅広く診療します。</p></div>
       <div style="background:#fff;padding:40px 36px;"><div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#aeb8b3;">03</div><div style="font-size:19px;letter-spacing:.04em;margin:14px 0 9px;">放射線科</div><p style="font-size:18px;line-height:1.85;color:#737d77;">X線撮影・骨密度測定など、画像による正確な診断を行います。</p></div>
-      <div style="background:#fff;padding:40px 36px;"><div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#aeb8b3;">04</div><div style="font-size:19px;letter-spacing:.04em;margin:14px 0 9px;">リハビリテーション科</div><p style="font-size:18px;line-height:1.85;color:#737d77;">運動機能の回復と維持を、一人ひとりに合わせて支援します。</p></div>
     </div>
   </div>
 
@@ -274,19 +272,25 @@
     <div class="ha-hours" style="padding:88px 6%;">
       <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:16px;">HOURS</div>
       <h2 class="sec-h2" style="font-weight:400;font-size:28px;letter-spacing:.05em;margin-bottom:30px;">診察時間</h2>
+      <!-- お知らせ（夏季休診など。掲載時はこのコメントを外す）
+      <div style="display:flex;align-items:center;gap:18px;margin-bottom:26px;padding:16px 22px;background:#f6f8f7;border-radius:2px;">
+        <span style="flex:none;font-size:14px;letter-spacing:.12em;color:#566f67;">お知らせ</span>
+        <span style="flex:none;width:1px;height:16px;background:#cbd5d0;"></span>
+        <span style="font-size:16px;letter-spacing:.04em;color:#46514b;">8/12(金)〜15(月)は夏季休診です</span>
+      </div>
+      -->
       <table class="hours-table" style="width:100%;border-collapse:collapse;font-size:18px;">
         <thead><tr style="color:#8b958f;"><th style="text-align:left;padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;"></th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">月</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">火</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">水</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">木</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">金</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">土</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">日祝</th></tr></thead>
         <tbody style="color:#46514b;">
           <tr><td style="padding:15px 6px;border-bottom:1px solid #eef1ef;color:#737d77;white-space:nowrap;">9:00–12:30</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td></tr>
           <tr><td style="padding:15px 6px;border-bottom:1px solid #eef1ef;color:#737d77;white-space:nowrap;">14:00–16:00</td><td style="text-align:center;border-bottom:1px solid #eef1ef;"><span style="display:inline-block;min-width:24px;height:22px;line-height:20px;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:13px;">栄</span></td><td style="text-align:center;border-bottom:1px solid #eef1ef;"><span style="display:inline-block;min-width:24px;height:22px;line-height:20px;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:13px;">往</span></td><td style="text-align:center;border-bottom:1px solid #eef1ef;"><span style="display:inline-block;min-width:24px;height:22px;line-height:20px;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:13px;">往</span></td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td></tr>
-          <tr><td style="padding:15px 6px;color:#737d77;white-space:nowrap;">18:00–20:00</td><td style="text-align:center;">●</td><td style="text-align:center;"><span style="display:inline-block;min-width:24px;height:22px;line-height:20px;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:13px;">整</span></td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;color:#c3cac6;">—</td><td style="text-align:center;color:#c3cac6;">—</td></tr>
+          <tr><td style="padding:15px 6px;color:#737d77;white-space:nowrap;">18:00–20:00</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;color:#c3cac6;">—</td><td style="text-align:center;color:#c3cac6;">—</td></tr>
         </tbody>
       </table>
       <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:16px 24px;font-size:13.5px;color:#5d6b65;">
         <span style="display:inline-flex;align-items:center;gap:8px;"><span style="color:#46514b;">●</span>診療</span>
         <span style="display:inline-flex;align-items:center;gap:8px;"><span style="display:inline-block;min-width:22px;height:20px;line-height:18px;text-align:center;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:12px;">栄</span>栄養指導</span>
         <span style="display:inline-flex;align-items:center;gap:8px;"><span style="display:inline-block;min-width:22px;height:20px;line-height:18px;text-align:center;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:12px;">往</span>往診</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;"><span style="display:inline-block;min-width:22px;height:20px;line-height:18px;text-align:center;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:12px;">整</span>整形外科併診</span>
       </div>
       <p style="margin-top:18px;font-size:16px;line-height:1.95;color:#bf6a45;font-weight:500;">※ 栄養指導は予約制です。<br>※ 往診の時間帯は、外来診療をお休みします。ご注意ください。</p>
       <p style="margin-top:10px;font-size:16px;line-height:1.95;color:#8b958f;">※ 受付は診察終了の30分前まで。　休診日：日曜・祝日</p>
@@ -300,7 +304,7 @@
     <!-- google map -->
     <div class="access-mobile" style="display:none;padding:0 7% 24px;">
       <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:14px;">ACCESS</div>
-      <div style="font-size:17px;letter-spacing:.04em;line-height:1.85;color:#2b352f;">〒572-0084<br>大阪府審屋川市香里南之町10-22</div>
+      <div style="font-size:17px;letter-spacing:.04em;line-height:1.85;color:#2b352f;">〒572-0084<br>大阪府寢屋川市香里南之町10-22</div>
       <div style="margin-top:12px;font-size:16px;line-height:1.85;color:#66706a;">京阪本線「香里園」駅より南へ徒歩約5分<br>TEL 072-831-3917</div>
     </div>
     <!-- map area -->
@@ -325,7 +329,7 @@
       </div>
       <div class="foot-links" style="display:flex;gap:64px;font-size:16px;line-height:2.3;color:#b9c3bd;">
         <div style="display:flex;flex-direction:column;gap:6px;"><div style="color:#7f9a91;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;margin-bottom:4px;">CLINIC</div><a href="about.html" style="transition:color .3s ease;" style-hover="color:#fff">当院について</a><a href="about.html#doctor" style="transition:color .3s ease;" style-hover="color:#fff">院長紹介</a><a href="about.html#equipment" style="transition:color .3s ease;" style-hover="color:#fff">設備紹介</a></div>
-        <div style="display:flex;flex-direction:column;gap:6px;"><div style="color:#7f9a91;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;margin-bottom:4px;">VISIT</div><a href="first-visit.html" style="transition:color .3s ease;" style-hover="color:#fff">初めての方へ</a><a href="index.html#hours" style="transition:color .3s ease;" style-hover="color:#fff">診察時間</a><a href="#access" style="transition:color .3s ease;" style-hover="color:#fff">アクセス</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px;"><div style="color:#7f9a91;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;margin-bottom:4px;">VISIT</div><a href="first-visit.html" style="transition:color .3s ease;" style-hover="color:#fff">初めての方へ</a><a href="index.html#hours" style="transition:color .3s ease;" style-hover="color:#fff">診察時間</a><a href="first-visit.html#access" style="transition:color .3s ease;" style-hover="color:#fff">アクセス</a></div>
       </div>
     </div>
     <div style="max-width:1180px;margin:26px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;"><div style="display:flex;flex-wrap:wrap;gap:20px;font-size:12px;color:#9aa39e;"><a href="privacy.html" style="transition:color .3s ease;" style-hover="color:#fff">情報セキュリティ基本方針</a><a href="facility.html" style="transition:color .3s ease;" style-hover="color:#fff">施設基準</a></div><div style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;color:#7d8a83;">© 2026 YAMADA CLINIC</div></div>

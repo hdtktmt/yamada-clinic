@@ -22,10 +22,23 @@
       "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/common/*.jpg' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/common/')",
       "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/doctor/*.png' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/doctor/')",
       "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/facility/*.jpg' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/facility/')",
-      "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/kv/*.png' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/kv/')"
+      "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/kv/*.png' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/kv/')",
+      "Bash(ls ~/.claude/commands/ 2>/dev/null && echo \"---user commands exist---\" || echo \"no user commands dir\" *)",
+      "Read(//Users/hidetaka/.claude/**)",
+      "Bash(ls ~/.claude/ 2>/dev/null)",
+      "Bash(mkdir -p \"/Users/hidetaka/Downloads/dist 2/.claude/commands\")",
+      "Bash(find /usr/local/lib /usr/local/bin /opt/homebrew -name \"claude\" -type f 2>/dev/null | head -5 *)",
+      "Read(//usr/local/**)",
+      "WebSearch",
+      "Bash(mkdir -p \"/Users/hidetaka/Downloads/dist 2/.claude/skills/convert-webp\")",
+      "Edit(/.claude/skills/convert-webp/**)",
+      "Bash(rm -rf \"/Users/hidetaka/Downloads/dist 2/.claude/commands\")"
     ],
     "additionalDirectories": [
-      "/tmp"
+      "/tmp",
+      "/Users/hidetaka/Downloads/dist 2/.claude",
+      "/Users/hidetaka/Downloads/dist 2/.claude/skills",
+      "/Users/hidetaka/Downloads/dist 2/.claude/commands"
     ]
   }
 }

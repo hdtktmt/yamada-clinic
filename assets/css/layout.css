@@ -154,7 +154,7 @@
   .hd2-nav,.hd2-cta{display:none}
   .hd2-toggle{display:flex}
   .hd2{padding:14px var(--container-px)}
-  .hero{height:auto;min-height:0;overflow:visible;background:#fff}
+  .hero{height:auto;min-height:0;overflow:visible;background:#fff;isolation:isolate}
   .kv-stage{position:relative;height:64vh;min-height:480px;overflow:hidden}
   .kv-img{background-position:center top}
   #kv1{background-image:url('../images/kv/kv-1-sp.webp')}
@@ -173,10 +173,6 @@
   .ha-map{min-height:0;height:360px}
   .access-card{display:none}
   .access-mobile{display:block}
-  .hd-brand-name{color:var(--c-dark)}
-  .hd-brand-en{color:var(--c-sub)}
-  .hd-bars i{background:var(--c-dark)}
-  .hd-blabel{color:var(--c-dark)}
 }
 @media (max-width:640px){
   .hero-title{font-size:31px;line-height:1.55}

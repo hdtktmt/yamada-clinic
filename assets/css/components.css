@@ -1,5 +1,6 @@
 /* navtoggle is a hidden checkbox; React drops the `hidden` attribute for empty-string values */
 input.navtoggle{display:none}
+.js-init .mpanel,.js-init .mbackdrop{transition:none!important}
 
 /* ===== Sub-page navigation (about / first-visit / facility / privacy) ===== */
 .nav{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:14px 22px;font-size:16px;color:var(--c-body)}

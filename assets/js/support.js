@@ -19,11 +19,17 @@
     }
 
     /* 2. Unwrap <x-dc>: move all non-helmet children into the document */
+    document.documentElement.classList.add('js-init');
     var frag = document.createDocumentFragment();
     [].slice.call(xdc.childNodes).forEach(function (node) {
       if (node !== helmet) frag.appendChild(node);
     });
     xdc.replaceWith(frag);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        document.documentElement.classList.remove('js-init');
+      });
+    });
 
     /* 3. Common page features */
     initHashNav();

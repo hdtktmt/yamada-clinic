@@ -173,6 +173,10 @@
   .ha-map{min-height:0;height:360px}
   .access-card{display:none}
   .access-mobile{display:block}
+  .hd-brand-name{color:var(--c-dark)}
+  .hd-brand-en{color:var(--c-sub)}
+  .hd-bars i{background:var(--c-dark)}
+  .hd-blabel{color:var(--c-dark)}
 }
 @media (max-width:640px){
   .hero-title{font-size:31px;line-height:1.55}

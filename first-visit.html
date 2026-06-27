@@ -1,83 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>x-dc{display:none!important}</style>
+  <script src="assets/js/support.js" defer></script>
 </head>
-<body>
+<body id="first-visit" class="subpage">
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;font-feature-settings:'palt' 1;font-kerning:normal}
-  body{background:#fff;font-family:'Zen Kaku Gothic New',sans-serif;color:#1f2a26;font-size:18px;font-feature-settings:'palt' 1;font-kerning:normal;letter-spacing:.04em;text-rendering:optimizeLegibility}
-  a{text-decoration:none;color:inherit}
-  .nav{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:14px 22px;font-size:16px;color:#46514b}
-  .nav a{transition:opacity .3s ease,color .3s ease}
-  .nav a:hover{opacity:.6}
-  .nav a.cta{transition:background .35s ease}
-  .nav a.cta:hover{opacity:1;background:#7f9a91 !important}
-  .next-link:hover{background:#eef2f0}
-  .next-link:hover .next-arrow{background:#2f3d37 !important;color:#fff !important;border-color:#2f3d37 !important}
-  .burger{display:none;align-items:center;gap:9px;cursor:pointer}
-  .burger .bars{display:flex;flex-direction:column;gap:5px}
-  .burger .bars i{display:block;width:24px;height:2px;background:#26312c}
-  .burger .blabel{font-size:11px;letter-spacing:.1em;color:#26312c}
-  .mnav{display:none}
-  .mpanel{position:fixed;top:0;right:0;height:100%;width:80%;max-width:340px;background:#2a352f;z-index:80;transform:translateX(100%);transition:transform .42s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;gap:4px;padding:90px 36px 40px}
-  .mbackdrop{position:fixed;inset:0;z-index:79;background:rgba(20,28,24,0);pointer-events:none;transition:background .42s ease}
-  .mpanel a{color:#e7eeec;font-size:17px;letter-spacing:.06em;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-  .mpanel{overflow-y:auto}
-  .mclose{position:absolute;top:22px;right:24px;display:flex;align-items:center;gap:7px;color:#e7eeec;cursor:pointer;border:0 !important;padding:0 !important}
-  .mclose-x{font-size:24px;line-height:1;display:flex;align-items:center}
-  .mclose-t{font-size:12px;letter-spacing:.08em;line-height:1;display:flex;align-items:center}
-  .mfoot{margin-top:auto;padding-top:26px;display:flex;flex-direction:column;gap:10px}
-  .mfoot a{font-size:14px !important;color:#9fb4ad !important;padding:0 !important;border:0 !important}
-  .navtoggle:checked ~ .mnav .mpanel{transform:translateX(0);box-shadow:-12px 0 40px rgba(0,0,0,.2)}
-  .navtoggle:checked ~ .mnav .mbackdrop{background:rgba(20,28,24,.42);pointer-events:auto}
-  @media (max-width:900px){.nav{display:none}.burger{display:flex}.mnav{display:block}}
-  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#e3e9e6;border:1px solid #e3e9e6}
-  @media (max-width:760px){.grid2{grid-template-columns:1fr}.foot-row{flex-direction:column !important;gap:32px !important}.step{grid-template-columns:56px 1fr !important;gap:16px !important}.next-link{flex-direction:column !important;align-items:flex-start !important;gap:22px !important;padding:32px 28px !important}.next-arrow{width:48px !important;height:48px !important;font-size:17px !important}}
-  .fv-access{display:grid;grid-template-columns:1.7fr 1fr;gap:28px;align-items:stretch;max-width:1180px;margin:0 auto}
-  .fv-map{position:relative;min-height:360px;border-radius:2px;overflow:hidden;background:#e7eeeb}
-  .fv-aside{display:flex;flex-direction:column;gap:20px}
-  .fv-exterior{width:100%;max-width:230px;aspect-ratio:4/3;border-radius:2px;background:#dbe4df url('assets/facade.jpg') center/cover no-repeat;position:relative}
-  .fv-exterior::after{content:attr(data-label);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.24em;color:rgba(60,66,62,.42);text-align:center;width:90%;display:none}
-  .fv-mapbtn:hover{background:#1a1a1a !important;color:#fff !important;border-color:#1a1a1a !important}
-  @media (max-width:760px){.fv-access{grid-template-columns:1fr}.fv-map{min-height:300px}.fv-exterior{max-width:none}.care-box{grid-template-columns:1fr !important;gap:12px !important}}
-</style>
-<script>
-(function(){
-  function jump(smooth){
-    var h=location.hash; if(!h||h.length<2) return;
-    var el=document.getElementById(decodeURIComponent(h.slice(1)));
-    if(el){ var y=el.getBoundingClientRect().top+window.pageYOffset-84; window.scrollTo({top:y,behavior:smooth?'smooth':'auto'}); }
-  }
-  window.addEventListener('load',function(){ setTimeout(function(){jump(false);},350); });
-  window.addEventListener('hashchange',function(){ jump(true); });
-})();
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<title>はじめての方へ｜山田クリニック｜寝屋川市香里園</title>
+<meta name="description" content="山田クリニックへはじめてご来院の方へ。受診時の持ち物・診察の流れ・アクセスをご案内します。大阪府寝屋川市、京阪香里園駅より徒歩約5分。">
+<link rel="canonical" href="https://80da.jp/first-visit.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="山田クリニック">
+<meta property="og:title" content="はじめての方へ｜山田クリニック｜寝屋川市香里園">
+<meta property="og:description" content="山田クリニックへはじめてご来院の方へ。受診時の持ち物・診察の流れ・アクセスをご案内します。大阪府寝屋川市、京阪香里園駅より徒歩約5分。">
+<meta property="og:url" content="https://80da.jp/first-visit.html">
+<meta property="og:image" content="https://80da.jp/assets/images/kv/kv-clinic-01.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="はじめての方へ｜山田クリニック｜寝屋川市香里園">
+<meta name="twitter:description" content="山田クリニックへはじめてご来院の方へ。受診時の持ち物・診察の流れ・アクセスをご案内します。大阪府寝屋川市、京阪香里園駅より徒歩約5分。">
+<meta name="twitter:image" content="https://80da.jp/assets/images/kv/kv-clinic-01.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "@id": "https://80da.jp/#clinic",
+  "name": "山田クリニック",
+  "url": "https://80da.jp/",
+  "telephone": "072-831-3917",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "572-0084",
+    "addressRegion": "大阪府",
+    "addressLocality": "寝屋川市",
+    "streetAddress": "香里南之町10-22"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=34.7819077,135.6309742"
+}
 </script>
 </helmet>
 
 <input id="navtoggle" class="navtoggle" type="checkbox" hidden>
-<header style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 7%;background:#fff;border-bottom:1px solid #e3e9e6;">
-  <a href="index.html" style="display:flex;align-items:center;gap:12px;flex:none;">
-    <span style="line-height:1.35;">
-      <span style="display:block;font-size:16px;font-weight:500;letter-spacing:.12em;color:#26312c;">山田クリニック</span>
-      <span style="display:block;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.36em;color:#9aa39e;">YAMADA CLINIC</span>
+<header class="site-header">
+  <a href="index.html" class="brand-link">
+    <span class="brand-text">
+      <span class="brand-name">山田クリニック</span>
+      <span class="brand-en">YAMADA CLINIC</span>
     </span>
   </a>
   <nav class="nav">
-    <a href="index.html" style-hover="color:#2f3d37">トップ</a>
-    <a href="about.html" style-hover="color:#2f3d37">当院について</a>
-    <a href="first-visit.html" style="color:#2f3d37;border-bottom:1px solid #7f9a91;padding-bottom:3px;">はじめての方へ</a>
-    <a href="#access" class="cta" style="display:inline-flex;align-items:center;gap:8px;background:#2f3d37;color:#fff;padding:11px 22px;border-radius:999px;font-size:13px;" style-hover="background:#7f9a91">アクセス <span style="font-family:'Jost',sans-serif;">→</span></a>
+    <a href="index.html">トップ</a>
+    <a href="about.html">当院について</a>
+    <a href="first-visit.html" class="nav-active">はじめての方へ</a>
+    <a href="#access" class="cta">アクセス <span class="fn-arrow">→</span></a>
   </nav>
   <label for="navtoggle" class="burger" aria-label="メニュー"><span class="bars"><i></i><i></i><i></i></span><span class="blabel">メニュー</span></label>
 </header>
+
 <div class="mnav">
   <label for="navtoggle" class="mbackdrop"></label>
   <div class="mpanel">
@@ -86,103 +76,157 @@
     <a href="about.html">当院について</a>
     <a href="first-visit.html">はじめての方へ</a>
     <a href="index.html#hours">診察時間</a>
-    <a href="#access" style="margin-top:24px;background:#7f9a91;color:#fff;text-align:center;border-radius:999px;padding:15px 0;border-bottom:0;">アクセス</a>
-    <div class="mfoot"><a href="privacy.html">情報セキュリティ基本方針</a><a href="facility.html">施設基準</a></div>
+    <a href="#access" class="mnav-access">アクセス</a>
+    <div class="mfoot">
+      <a href="privacy.html">情報セキュリティ基本方針</a>
+      <a href="facility.html">施設基準</a>
+    </div>
   </div>
 </div>
 
-<div style="padding:96px 7% 60px;background:#f6f8f7;border-bottom:1px solid #e3e9e6;">
-  <div style="max-width:1180px;margin:0 auto;">
-    <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:14px;">FIRST VISIT</div>
-    <h1 style="font-weight:400;font-size:clamp(31px,2.2vw + 22px,44px);letter-spacing:.05em;line-height:1.5;color:#26312c;">はじめての方へ</h1>
-    <p style="max-width:660px;margin-top:18px;font-size:16px;line-height:1.95;color:#66706a;">初めての受診も安心していただけるよう、<br>お持ちいただくものと受診の流れをご案内します。</p>
-  </div>
-</div>
+<main>
 
-<section style="padding:clamp(64px,8vw,100px) 7%;">
-  <div style="max-width:1180px;margin:0 auto 40px;">
-    <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:14px;">BELONGINGS</div>
-    <h2 style="font-weight:400;font-size:clamp(26px,1.8vw + 18px,32px);letter-spacing:.05em;color:#26312c;">受診時にお持ちいただくもの</h2>
-  </div>
-  <ul class="grid2" style="max-width:1180px;margin:0 auto;list-style:none;">
-    <li style="background:#fff;display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:24px 32px;"><span style="font-size:19px;letter-spacing:.04em;">マイナ保険証</span><span style="font-size:13px;color:#8b958f;">または資格確認書をご提示ください</span></li>
-    <li style="background:#fff;display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:24px 32px;"><span style="font-size:19px;letter-spacing:.04em;">各種医療証</span><span style="font-size:13px;color:#8b958f;">お持ちの方</span></li>
-    <li style="background:#fff;display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:24px 32px;"><span style="font-size:19px;letter-spacing:.04em;">お薬手帳</span><span style="font-size:13px;color:#8b958f;">服用中のお薬がわかるもの</span></li>
-    <li style="background:#fff;display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:24px 32px;"><span style="font-size:19px;letter-spacing:.04em;">紹介状</span><span style="font-size:13px;color:#8b958f;">お持ちの方</span></li>
-    <li style="background:#fff;display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:24px 32px;"><span style="font-size:19px;letter-spacing:.04em;">健診結果</span><span style="font-size:13px;color:#8b958f;">お持ちの方</span></li>
-    <li style="background:#fff;display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:24px 32px;"><span style="font-size:19px;letter-spacing:.04em;">現金</span><span style="font-size:13px;color:#8b958f;">電子マネー・クレジットカードはご利用いただけません</span></li>
-  </ul>
-</section>
-
-<section style="padding:clamp(64px,8vw,100px) 7%;background:#f6f8f7;">
-  <div style="max-width:1180px;margin:0 auto 40px;">
-    <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:14px;">FLOW</div>
-    <h2 style="font-weight:400;font-size:clamp(26px,1.8vw + 18px,32px);letter-spacing:.05em;color:#26312c;">受診の流れ</h2>
-  </div>
-  <div style="max-width:1180px;margin:0 auto;">
-    <div class="step" style="display:grid;grid-template-columns:88px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e3e9e6;"><span style="font-family:'Jost',sans-serif;font-size:28px;font-weight:300;color:#7f9a91;">01</span><div><div style="font-size:19px;font-weight:500;letter-spacing:.04em;color:#26312c;">受付</div><p style="margin-top:8px;font-size:16px;line-height:1.95;color:#66706a;">マイナ保険証（または資格確認書）をご提示ください。事前にマイナンバーカードをスマートフォンに設定していれば、スマートフォンでの受付も可能です。</p></div></div>
-    <div class="step" style="display:grid;grid-template-columns:88px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e3e9e6;"><span style="font-family:'Jost',sans-serif;font-size:28px;font-weight:300;color:#7f9a91;">02</span><div><div style="font-size:19px;font-weight:500;letter-spacing:.04em;color:#26312c;">診察</div><p style="margin-top:8px;font-size:16px;line-height:1.95;color:#66706a;">医師がお話を伺い、診察します。気になることは遠慮なくご相談ください。</p></div></div>
-    <div class="step" style="display:grid;grid-template-columns:88px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e3e9e6;"><span style="font-family:'Jost',sans-serif;font-size:28px;font-weight:300;color:#7f9a91;">03</span><div><div style="font-size:19px;font-weight:500;letter-spacing:.04em;color:#26312c;">検査・処置</div><p style="margin-top:8px;font-size:16px;line-height:1.95;color:#66706a;">必要に応じて、血液検査やエコーなどの検査を行います。</p></div></div>
-    <div class="step" style="display:grid;grid-template-columns:88px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e3e9e6;border-bottom:1px solid #e3e9e6;"><span style="font-family:'Jost',sans-serif;font-size:28px;font-weight:300;color:#7f9a91;">04</span><div><div style="font-size:19px;font-weight:500;letter-spacing:.04em;color:#26312c;">お会計・次回のご案内</div><p style="margin-top:8px;font-size:16px;line-height:1.95;color:#66706a;">診察結果と今後の方針をご説明し、次回の受診をご案内します。</p></div></div>
-
-    <div class="care-box" style="margin-top:40px;display:grid;grid-template-columns:88px 1fr;gap:32px;padding:32px 36px;background:#fff;border:1px solid #d8e2dd;border-radius:2px;">
-      <span style="font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.18em;color:#bf6a45;padding-top:6px;">CARE</span>
-      <div>
-        <div style="font-size:19px;font-weight:500;letter-spacing:.04em;color:#26312c;">感染症の疑いがある方へ</div>
-        <p style="margin-top:10px;font-size:16px;line-height:1.95;color:#66706a;">インフルエンザ・新型コロナ・ノロウイルスなど感染症の疑いがある方は、一般の患者さんと接触しないよう動線を分けています。勝手口から専用の小部屋にご案内し、そちらで診療を行います。</p>
-      </div>
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">FIRST VISIT</div>
+      <h1 class="page-title">はじめての方へ</h1>
+      <p class="page-desc">初めての受診も安心していただけるよう、<br>お持ちいただくものと受診の流れをご案内します。</p>
     </div>
   </div>
-</section>
 
-<section id="access" style="scroll-margin-top:80px;padding:clamp(64px,8vw,100px) 7%;background:#fff;">
-  <div style="max-width:1180px;margin:0 auto 40px;">
-    <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:14px;">ACCESS</div>
-    <h2 style="font-weight:400;font-size:clamp(26px,1.8vw + 18px,32px);letter-spacing:.05em;color:#26312c;">アクセス</h2>
-  </div>
-  <div class="fv-access">
-    <div class="fv-map">
-      <iframe src="https://www.google.com/maps?q=%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82%E9%A6%99%E9%87%8C%E5%8D%97%E4%B9%8B%E7%94%BA10-22&z=16&hl=ja&output=embed" title="山田クリニックの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+  <!-- Belongings -->
+  <section class="sec-belongings">
+    <div class="sec-head-fv">
+      <div class="sec-eyebrow-fv">BELONGINGS</div>
+      <h2 class="sec-h2-fv">受診時にお持ちいただくもの</h2>
     </div>
-    <div class="fv-aside">
-      <div>
-        <div style="font-size:17px;letter-spacing:.04em;line-height:1.85;color:#2b352f;">〒572-0084<br>大阪府寝屋川市香里南之町10-22</div>
-        <div style="margin-top:12px;font-size:16px;line-height:1.85;color:#66706a;">京阪本線「香里園」駅より南へ徒歩約5分<br>TEL 072-831-3917</div>
-        <a href="https://www.google.com/maps/search/?api=1&query=34.7819077,135.6309742" target="_blank" rel="noopener" class="fv-mapbtn" style="margin-top:18px;display:inline-flex;align-items:center;gap:14px;border:1px solid #8a9c95;border-radius:999px;padding:12px 24px;font-size:15px;letter-spacing:.04em;color:#2f3d37;transition:background .35s ease,color .35s ease,border-color .35s ease;">Googleマップで開く <span style="font-family:'Jost',sans-serif;">↗</span></a>
-      </div>
-      <div>
-        <div class="fv-exterior"></div>
-        <div style="margin-top:8px;font-size:13px;color:#8b958f;letter-spacing:.04em;">クリニック外観</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <ul class="grid2 inner-wrap">
+      <li class="belonging-item"><span class="belonging-name">マイナ保険証</span><span class="belonging-note">または資格確認書</span></li>
+      <li class="belonging-item"><span class="belonging-name">各種医療証</span><span class="belonging-note">お持ちの方</span></li>
+      <li class="belonging-item"><span class="belonging-name">お薬手帳</span><span class="belonging-note">服用中のお薬がわかるもの</span></li>
+      <li class="belonging-item"><span class="belonging-name">紹介状</span><span class="belonging-note">お持ちの方</span></li>
+      <li class="belonging-item"><span class="belonging-name">健診結果</span><span class="belonging-note">お持ちの方</span></li>
+      <li class="belonging-item"><span class="belonging-name">現金</span><span class="belonging-note">現金のみ</span></li>
+    </ul>
+  </section>
 
-<section style="padding:clamp(64px,8vw,100px) 7%;background:#f6f8f7;">
-  <a href="about.html" class="next-link" style="display:flex;align-items:center;justify-content:space-between;gap:32px;max-width:1180px;margin:0 auto;padding:48px 56px;background:#fff;border-radius:2px;transition:background .35s ease;">
+  <!-- Flow -->
+  <section class="sec-flow">
+    <div class="sec-head-fv">
+      <div class="sec-eyebrow-fv">FLOW</div>
+      <h2 class="sec-h2-fv">受診の流れ</h2>
+    </div>
+    <div class="inner-wrap">
+      <div class="step">
+        <span class="step-num">01</span>
+        <div class="step-body">
+          <div class="step-title">受付</div>
+          <p class="step-desc">マイナ保険証（または資格確認書）をご提示ください。事前にマイナンバーカードをスマートフォンに設定していれば、スマートフォンでの受付も可能です。</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <div class="step-body">
+          <div class="step-title">診察</div>
+          <p class="step-desc">医師がお話を伺い、診察します。気になることは遠慮なくご相談ください。</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <div class="step-body">
+          <div class="step-title">検査・処置</div>
+          <p class="step-desc">必要に応じて、血液検査やエコーなどの検査を行います。</p>
+        </div>
+      </div>
+      <div class="step step-last">
+        <span class="step-num">04</span>
+        <div class="step-body">
+          <div class="step-title">お会計・次回のご案内</div>
+          <p class="step-desc">診察結果と今後の方針をご説明し、次回の受診をご案内します。</p>
+        </div>
+      </div>
+
+      <div class="care-box">
+        <span class="care-eyebrow-label">CARE</span>
+        <div>
+          <div class="care-box-title">感染症の疑いがある方へ</div>
+          <p class="care-box-desc">インフルエンザ・新型コロナ・ノロウイルスなど感染症の疑いがある方は、一般の患者さんと接触しないよう動線を分けています。勝手口から専用の小部屋にご案内し、そちらで診療を行います。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Access -->
+  <section id="access" class="sec-access">
+    <div class="sec-head-fv">
+      <div class="sec-eyebrow-fv">ACCESS</div>
+      <h2 class="sec-h2-fv">アクセス</h2>
+    </div>
+    <div class="fv-access">
+      <div class="fv-map">
+        <iframe src="https://www.google.com/maps?q=%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82%E9%A6%99%E9%87%8C%E5%8D%97%E4%B9%8B%E7%94%BA10-22&z=16&hl=ja&output=embed" title="山田クリニックの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+      </div>
+      <div class="fv-aside">
+        <div>
+          <div class="access-addr">〒572-0084<br>大阪府寝屋川市香里南之町10-22</div>
+          <div class="access-info">京阪本線「香里園」駅より南へ徒歩約5分<br>TEL 072-831-3917</div>
+          <a href="https://www.google.com/maps/search/?api=1&query=34.7819077,135.6309742" target="_blank" rel="noopener" class="fv-mapbtn">Googleマップで開く <span class="fn-arrow">↗</span></a>
+        </div>
+        <div>
+          <div class="fv-exterior"></div>
+          <div class="fv-exterior-label">クリニック外観</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next -->
+  <section class="sec-next">
+    <a href="about.html" class="next-link">
+      <div class="next-body">
+        <div class="next-eyebrow">NEXT</div>
+        <div class="next-title">当院について、もっと知る</div>
+        <p class="next-desc">診療方針や院長紹介、設備についてはこちらをご覧ください。</p>
+      </div>
+      <span class="next-arrow">→</span>
+    </a>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="foot-row">
     <div>
-      <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.34em;color:#7f9a91;margin-bottom:12px;">NEXT</div>
-      <div style="font-size:clamp(22px,1.6vw + 16px,28px);font-weight:400;letter-spacing:.04em;color:#26312c;line-height:1.5;">当院について、もっと知る</div>
-      <p style="margin-top:12px;font-size:16px;line-height:1.9;color:#66706a;">診療方針や院長紹介、設備についてはこちらをご覧ください。</p>
+      <div class="foot-brand-name">山田クリニック</div>
+      <div class="foot-brand-en">YAMADA CLINIC</div>
+      <div class="foot-addr">〒572-0084 大阪府寝屋川市香里南之町10-22<br>TEL 072-831-3917</div>
     </div>
-    <span class="next-arrow" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;border:1px solid #8a9c95;border-radius:50%;font-family:'Jost',sans-serif;font-size:20px;color:#2f3d37;transition:background .35s ease,color .35s ease,border-color .35s ease;">→</span>
-  </a>
-</section>
-
-<footer style="background:#2a352f;color:#cfd8d3;padding:64px 7% 38px;">
-  <div class="foot-row" style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12);">
-    <div>
-      <div style="font-size:17px;font-weight:500;letter-spacing:.12em;color:#fff;">山田クリニック</div>
-      <div style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.4em;color:#8fa39b;margin-top:8px;">YAMADA CLINIC</div>
-      <div style="margin-top:22px;font-size:16px;line-height:2;color:#aeb9b3;">〒572-0084 大阪府寝屋川市香里南之町10-22<br>TEL 072-831-3917</div>
-    </div>
-    <div style="display:flex;gap:60px;font-size:16px;line-height:2.3;color:#b9c3bd;">
-      <div style="display:flex;flex-direction:column;gap:6px;"><div style="color:#7f9a91;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;margin-bottom:4px;">CLINIC</div><a href="about.html#message" style="transition:color .3s ease;" style-hover="color:#fff">当院について</a><a href="about.html#doctor" style="transition:color .3s ease;" style-hover="color:#fff">院長紹介</a><a href="about.html#equipment" style="transition:color .3s ease;" style-hover="color:#fff">設備紹介</a></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><div style="color:#7f9a91;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;margin-bottom:4px;">VISIT</div><a href="first-visit.html" style="transition:color .3s ease;" style-hover="color:#fff">はじめての方へ</a><a href="index.html#hours" style="transition:color .3s ease;" style-hover="color:#fff">診察時間</a><a href="#access" style="transition:color .3s ease;" style-hover="color:#fff">アクセス</a></div>
-    </div>
+    <nav class="foot-links">
+      <div class="foot-col">
+        <div class="foot-col-title">CLINIC</div>
+        <a href="about.html#message">当院について</a>
+        <a href="about.html#doctor">院長紹介</a>
+        <a href="about.html#equipment">設備紹介</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-col-title">VISIT</div>
+        <a href="first-visit.html">はじめての方へ</a>
+        <a href="index.html#hours">診察時間</a>
+        <a href="#access">アクセス</a>
+      </div>
+    </nav>
   </div>
-  <div style="max-width:1180px;margin:26px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;"><div style="display:flex;flex-wrap:wrap;gap:20px;font-size:12px;color:#9aa39e;"><a href="privacy.html" style="transition:color .3s ease;" style-hover="color:#fff">情報セキュリティ基本方針</a><a href="facility.html" style="transition:color .3s ease;" style-hover="color:#fff">施設基準</a></div><div style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;color:#7d8a83;">© 2026 YAMADA CLINIC</div></div>
+  <div class="foot-bottom">
+    <div class="foot-legal">
+      <a href="privacy.html">情報セキュリティ基本方針</a>
+      <a href="facility.html">施設基準</a>
+    </div>
+    <div class="foot-copy">© 2026 YAMADA CLINIC</div>
+  </div>
 </footer>
+
 </x-dc>
 </body>
 </html>

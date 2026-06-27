@@ -1,403 +1,337 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>x-dc{display:none!important}</style>
+  <script src="assets/js/support.js" defer></script>
+  <link rel="preload" as="image" href="assets/images/kv/kv-1.webp" media="(min-width:901px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/kv/kv-1-sp.webp" media="(max-width:900px)" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
 </head>
-<body>
+<body class="home">
 <x-dc>
 <helmet>
-<title>山田クリニック｜寝屋川市香里園の糖尿病内科・内科・放射線科</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;font-feature-settings:'palt' 1;font-kerning:normal}
-  body{background:#ffffff;font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px;font-feature-settings:'palt' 1;font-kerning:normal;letter-spacing:.04em;text-rendering:optimizeLegibility}
-  @keyframes scInd{0%{transform:scaleY(0);transform-origin:top;opacity:.3}45%{transform:scaleY(1);transform-origin:top;opacity:1}55%{transform:scaleY(1);transform-origin:bottom;opacity:1}100%{transform:scaleY(0);transform-origin:bottom;opacity:.3}}
-  @keyframes fadeUp{from{transform:translateY(20px)}to{transform:translateY(0)}}
-
-  .hd-toggle{display:none}
-  .hd-mobile{display:none}
-  @media (max-width:900px){
-    .hd-mobile{display:block}
-  }
-  .hd-mobile-panel{position:fixed;top:0;right:0;height:100%;width:80%;max-width:340px;background:#2a352f;z-index:80;transform:translateX(100%);transition:transform .42s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:90px 36px 40px;gap:4px;overflow-y:auto;font-family:'Zen Kaku Gothic New',sans-serif}
-  .hd-mobile.open .hd-mobile-panel{transform:translateX(0);box-shadow:-12px 0 40px rgba(0,0,0,.2)}
-  .hd-mobile-backdrop{position:fixed;inset:0;background:rgba(20,28,24,0);z-index:79;pointer-events:none;transition:background .42s ease}
-  .hd-mobile.open .hd-mobile-backdrop{background:rgba(20,28,24,.42);pointer-events:auto}
-  .hd-mobile-panel a{color:#e7eeec;font-size:17px;letter-spacing:.06em;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-
-  /* ===== responsive ===== */
-  @media (max-width:1024px){
-    .care-grid{grid-template-columns:repeat(2,1fr) !important;gap:36px !important}
-  }
-  @media (max-width:900px){
-    .hd{padding:20px 24px !important}
-    .hd-nav{display:none !important}
-    .hd-cta{display:none !important}
-    .hd-toggle{display:inline-flex !important}
-    .hero-copy{max-width:none !important;padding:0 7% !important}
-    .hero-title{font-size:40px !important;white-space:normal !important}
-    .ha-grid{grid-template-columns:1fr !important}
-    .ha-map{min-height:0 !important;height:360px !important}
-    .access-card{display:none !important}
-    .access-mobile{display:block !important}
-    .sec-pad{padding-left:7% !important;padding-right:7% !important}
-  }
-  @media (max-width:640px){
-    .hero-title{font-size:31px !important;line-height:1.55 !important}
-    .hero-lead{font-size:16px !important}
-    .hero-copy .btn-line{padding:14px 26px !important;gap:24px !important;font-size:16px !important}
-    .care-grid{grid-template-columns:1fr !important;gap:40px !important;margin-top:48px !important}
-    .dept-grid{grid-template-columns:1fr !important}
-    .sec-h2{font-size:26px !important}
-    .brsp-top{display:inline !important}
-    .sec-care{padding:44px 7% 56px !important}
-    .news-bar{gap:18px !important;padding:20px 7% !important}
-    .hero-copy .btn-line{margin-top:26px !important;gap:24px !important;padding:12px 24px !important;font-size:14px !important}
-    .sec-dept{padding:64px 7% !important}
-    .ha-hours{padding:60px 7% !important}
-    .hours-table{font-size:15px !important}
-    .foot-row{flex-direction:column !important;gap:34px !important}
-    .foot{padding:60px 7% 36px !important}
-    .access-card{left:16px !important;right:16px !important;bottom:16px !important;max-width:none !important;padding:22px 24px !important}
-  }
-  @media (max-width:420px){
-    .foot-links{gap:36px !important}
-  }
-
-  .ph{position:relative;overflow:hidden}
-  .ph::after{content:attr(data-label);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.28em;color:rgba(60,66,62,.42);text-transform:uppercase;white-space:nowrap}
-  a{text-decoration:none;color:inherit}
-  .kv-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.7s cubic-bezier(.4,0,.2,1)}
-  .kv-slide.is-active{opacity:1}
-  .kv-img{position:absolute;inset:0;background-size:cover;background-position:center right;transform:scale(1.0);transition:transform 6.2s ease-out}
-  #kv1{background-image:url('assets/kv-01.png')}
-  #kv2{background-image:url('assets/kv-02.png')}
-  #kv3{background-image:url('assets/kv-03.png')}
-  #kv4{background-image:url('assets/kv-04.png')}
-  .kv-stage{position:absolute;inset:0}
-  .kv-fade{display:none}
-  .lead-sp{display:none}
-  .brsp-top{display:none}
-  @media (max-width:900px){
-    .hero{height:auto !important;min-height:0 !important;overflow:visible !important;background:#fff !important}
-    .kv-stage{position:relative !important;height:64vh;min-height:480px;overflow:hidden !important}
-    .kv-img{background-position:center top !important}
-    #kv1{background-image:url('assets/kv-01-sp.png')}
-    #kv2{background-image:url('assets/kv-02-sp.png')}
-    #kv3{background-image:url('assets/kv-03-sp.png')}
-    #kv4{background-image:url('assets/kv-04-sp.png')}
-    .kv-wash{display:none !important}
-    .kv-fade{display:block !important}
-    .lead-pc{display:none}
-    .lead-sp{display:inline}
-    .scroll-ind{display:flex !important;top:auto !important;bottom:22px !important;right:20px !important;transform:none !important}
-    .hero-copy{position:relative !important;height:auto !important;margin-top:-128px !important;padding:0 7% 22px !important;max-width:none !important;z-index:auto !important}
-    .hero-title{color:#1f2a26 !important;mix-blend-mode:normal !important}
-    .hero-lead{color:#46514b !important;mix-blend-mode:normal !important}
-  }
-  .btn-line{transition:background .35s ease,color .35s ease,border-color .35s ease}
-  .btn-line:hover{background:#1a1a1a !important;color:#ffffff !important;border-color:#1a1a1a !important}
-  .btn-solid{transition:background .35s ease,color .35s ease,border-color .35s ease}
-  .btn-solid:hover{background:#ffffff !important;color:#1f2a26 !important;border-color:#ffffff !important}
-  .hd{transition:background .3s ease,border-color .3s ease}
-  .hd.scrolled{border-bottom:0}
-  .hd-bg{position:absolute;inset:0;z-index:0;background:#fff;opacity:0;transition:opacity .3s ease;border-bottom:1px solid #e3e9e6;pointer-events:none}
-  .hd.scrolled .hd-bg{opacity:1 !important}
-  .hd-brand div,.hd-nav a{transition:color .3s ease}
-  .hd.scrolled .hd-brand div{color:#26312c !important}
-  .hd.scrolled .hd-brand > div:first-child{border-color:#7f9a91 !important;color:#566f67 !important}
-  .hd.scrolled .hd-nav a{color:#26312c !important}
-  .hd.scrolled .hd-toggle span{background:#26312c !important}
-  .hd2{transform:translateY(-100%);opacity:0;transition:transform .35s ease,opacity .35s ease;pointer-events:none}
-  .hd2.scrolled{transform:translateY(0);opacity:1;pointer-events:auto}
-  .hd2-toggle{display:none}
-  .hd2-cta:hover{background:#7f9a91 !important}
-  .hd-cta{transition:background .35s ease,border-color .35s ease}
-  .hd-cta:hover{background:#7f9a91 !important;border-color:#7f9a91 !important;color:#fff !important}
-  .hd-mobile-foot a{font-size:14px !important;color:#9fb4ad !important;border:0 !important;padding:0 !important}
-  @media (max-width:900px){.hd2-nav,.hd2-cta{display:none !important}.hd2-toggle{display:flex !important}.hd2{padding:14px 20px !important}}
-</style>
-<script>
-(function(){
-  function jump(smooth){
-    var h=location.hash; if(!h||h.length<2) return;
-    var el=document.getElementById(decodeURIComponent(h.slice(1)));
-    if(el){ var y=el.getBoundingClientRect().top+window.pageYOffset-84; window.scrollTo({top:y,behavior:smooth?'smooth':'auto'}); }
-  }
-  window.addEventListener('load',function(){ setTimeout(function(){jump(false);},350); });
-  window.addEventListener('hashchange',function(){ jump(true); });
-})();
+<title>山田クリニック｜糖尿病内科・内科・放射線科｜寝屋川市香里園</title>
+<meta name="description" content="寝屋川市香里園の山田クリニックです。糖尿病内科・内科・放射線科を診療。京阪香里園駅より徒歩約5分。地域のかかりつけ医として、お一人おひとりに丁寧な診察をいたします。">
+<link rel="canonical" href="https://80da.jp/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="山田クリニック">
+<meta property="og:title" content="山田クリニック｜糖尿病内科・内科・放射線科｜寝屋川市香里園">
+<meta property="og:description" content="寝屋川市香里園の山田クリニックです。糖尿病内科・内科・放射線科を診療。京阪香里園駅より徒歩約5分。地域のかかりつけ医として、お一人おひとりに丁寧な診察をいたします。">
+<meta property="og:url" content="https://80da.jp/">
+<meta property="og:image" content="https://80da.jp/assets/images/kv/kv-clinic-01.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="山田クリニック｜糖尿病内科・内科・放射線科｜寝屋川市香里園">
+<meta name="twitter:description" content="寝屋川市香里園の山田クリニックです。糖尿病内科・内科・放射線科を診療。京阪香里園駅より徒歩約5分。地域のかかりつけ医として、お一人おひとりに丁寧な診察をいたします。">
+<meta name="twitter:image" content="https://80da.jp/assets/images/kv/kv-clinic-01.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "@id": "https://80da.jp/#clinic",
+  "name": "山田クリニック",
+  "url": "https://80da.jp/",
+  "telephone": "072-831-3917",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "572-0084",
+    "addressRegion": "大阪府",
+    "addressLocality": "寝屋川市",
+    "streetAddress": "香里南之町10-22"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.7819077,
+    "longitude": 135.6309742
+  },
+  "medicalSpecialty": ["糖尿病内科", "内科", "放射線科"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "12:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "18:00",
+      "closes": "20:00"
+    }
+  ]
+}
 </script>
 </helmet>
 
-<div ref="{{ heroRef }}" id="top" class="hero" style="position:relative;height:100vh;min-height:660px;overflow:hidden;background:#e7ece9;">
+<!-- Mobile toggle (checkbox hack shared by .hd and .hd2 burger labels) -->
+<input id="navtoggle" class="navtoggle" type="checkbox" hidden>
 
-  <!-- KV stage (image area) -->
+<!-- Mobile Menu -->
+<div class="mnav">
+  <label for="navtoggle" class="mbackdrop"></label>
+  <div class="mpanel">
+    <label for="navtoggle" class="mclose" aria-label="閉じる">
+      <span class="mclose-x">×</span>
+      <span class="mclose-t">閉じる</span>
+    </label>
+    <a href="index.html">トップ</a>
+    <a href="about.html">当院について</a>
+    <a href="first-visit.html">はじめての方へ</a>
+    <a href="index.html#hours">診察時間</a>
+    <a href="first-visit.html#access" class="mnav-access">アクセス</a>
+    <div class="mfoot">
+      <a href="privacy.html">情報セキュリティ基本方針</a>
+      <a href="facility.html">施設基準</a>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div id="top" class="hero">
+
   <div class="kv-stage">
-    <div ref="{{ sentinelRef }}" style="position:absolute;top:40px;left:0;width:1px;height:1px;pointer-events:none;"></div>
-    <div class="kv-slide is-active"><div class="kv-img" id="kv3"></div></div>
-    <div class="kv-slide"><div class="kv-img" id="kv4"></div></div>
-
-    <!-- soft wash on the left so copy stays legible over bright photos (desktop) -->
-    <div class="kv-wash" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(248,250,249,.86) 0%,rgba(248,250,249,.55) 26%,rgba(248,250,249,.08) 46%,rgba(248,250,249,0) 60%);pointer-events:none;"></div>
-
-    <!-- bottom white fade (mobile: blends photo into the copy area) -->
-    <div class="kv-fade" style="position:absolute;left:0;right:0;bottom:0;height:188px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,.8) 46%,#ffffff 80%);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 46%);mask-image:linear-gradient(to bottom,transparent 0%,#000 46%);pointer-events:none;"></div>
-
-    <!-- scroll indicator (over the image) -->
-    <div class="scroll-ind" style="position:absolute;right:46px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:18px;pointer-events:none;z-index:2;">
-      <span style="writing-mode:vertical-rl;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.36em;color:#5d7a70;">SCROLL</span>
-      <span style="width:1px;height:64px;background:#5d7a70;animation:scInd 2.2s ease-in-out infinite;"></span>
+    <div class="kv-sentinel"></div>
+    <div class="kv-slide is-active"><div class="kv-img" id="kv1"></div></div>
+    <div class="kv-slide"><div class="kv-img" id="kv2"></div></div>
+    <div class="kv-wash"></div>
+    <div class="kv-fade"></div>
+    <div class="scroll-ind">
+      <span class="scroll-label">SCROLL</span>
+      <span class="scroll-line"></span>
     </div>
   </div>
 
-  <!-- header (overlapping KV) — absolute + mix-blend-mode so text adapts to the KV -->
-  <div class="hd {{ hdClass }}" style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:30px 52px;">
-    <div class="hd-bg"></div>
-    <a href="#" class="hd-brand" style="display:flex;align-items:center;gap:13px;position:relative;z-index:1;mix-blend-mode:difference;pointer-events:auto;">
-      <div style="line-height:1.4;">
-        <div style="font-size:16px;letter-spacing:.12em;font-weight:500;color:#fff;white-space:nowrap;">山田クリニック</div>
-        <div class="hd-brand-en" style="font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.36em;color:#fff;white-space:nowrap;">YAMADA CLINIC</div>
-      </div>
+  <!-- Transparent overlay header — inside hero so mix-blend-mode blends against KV images -->
+  <div class="hd">
+    <a href="index.html" class="hd-brand">
+      <span class="hd-brand-text">
+        <span class="hd-brand-name">山田クリニック</span>
+        <span class="hd-brand-en">YAMADA CLINIC</span>
+      </span>
     </a>
-    <div style="display:flex;align-items:center;gap:20px;">
-      <div class="hd-nav" style="display:flex;align-items:center;gap:24px;font-size:16px;letter-spacing:.06em;color:#fff;mix-blend-mode:difference;white-space:nowrap;position:relative;z-index:1;">
-        <a href="index.html" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;white-space:nowrap;" style-hover="opacity:.6;border-bottom:1px solid currentColor;">トップ</a>
-        <a href="about.html" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;white-space:nowrap;" style-hover="opacity:.6;border-bottom:1px solid currentColor;">当院について</a>
-        <a href="first-visit.html" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;white-space:nowrap;" style-hover="opacity:.6;border-bottom:1px solid currentColor;">はじめての方へ</a>
-      </div>
-      <a href="first-visit.html#access" class="hd-cta" style="display:flex;align-items:center;gap:10px;background:#2f3d37;color:#fff;border:1px solid #2f3d37;padding:12px 24px;border-radius:999px;font-size:13.5px;letter-spacing:.06em;white-space:nowrap;position:relative;z-index:1;">アクセス <span style="font-family:'Jost',sans-serif;">→</span></a>
-      <button class="hd-toggle" onClick="{{ toggleMenu }}" aria-label="メニュー" style="mix-blend-mode:difference;align-items:center;gap:9px;height:42px;background:transparent;border:0;cursor:pointer;padding:0;position:relative;z-index:1;">
-        <span style="display:flex;flex-direction:column;gap:5px;"><span style="display:block;width:24px;height:2px;background:#fff;"></span><span style="display:block;width:24px;height:2px;background:#fff;"></span><span style="display:block;width:24px;height:2px;background:#fff;"></span></span>
-        <span style="font-size:11px;letter-spacing:.1em;color:#fff;">メニュー</span>
-      </button>
-    </div>
+    <nav class="hd-nav">
+      <a href="index.html">トップ</a>
+      <a href="about.html">当院について</a>
+      <a href="first-visit.html">はじめての方へ</a>
+      <a href="first-visit.html#access" class="hd-cta">アクセス <span class="fn-arrow">→</span></a>
+    </nav>
+    <label for="navtoggle" class="hd-toggle" aria-label="メニュー">
+      <span class="hd-bars"><i></i><i></i><i></i></span>
+      <span class="hd-blabel">メニュー</span>
+    </label>
   </div>
 
-  <!-- sticky follow header (slides in on scroll; blend header above scrolls away) -->
-  <div class="hd2 {{ hdClass }}" style="position:fixed;top:0;left:0;right:0;z-index:55;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 52px;background:#fff;border-bottom:1px solid #e3e9e6;">
-    <a href="#top" style="display:flex;align-items:center;gap:12px;transition:opacity .3s ease;" style-hover="opacity:.6">
-      <span style="line-height:1.35;"><span style="display:block;font-size:16px;font-weight:500;letter-spacing:.12em;color:#26312c;">山田クリニック</span><span style="display:block;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.36em;color:#9aa39e;">YAMADA CLINIC</span></span>
-    </a>
-    <div style="display:flex;align-items:center;gap:20px;">
-      <div class="hd2-nav" style="display:flex;align-items:center;gap:24px;font-size:16px;color:#46514b;">
-        <a href="#top" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;" style-hover="opacity:.6;border-bottom:1px solid #2f3d37;">トップ</a>
-        <a href="about.html" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;" style-hover="opacity:.6;border-bottom:1px solid #2f3d37;">当院について</a>
-        <a href="first-visit.html" style="padding-bottom:5px;border-bottom:1px solid transparent;transition:opacity .3s ease,border-color .3s ease;" style-hover="opacity:.6;border-bottom:1px solid #2f3d37;">はじめての方へ</a>
-      </div>
-      <a href="first-visit.html#access" class="hd2-cta" style="display:inline-flex;align-items:center;gap:8px;background:#2f3d37;color:#fff;padding:11px 22px;border-radius:999px;font-size:13px;transition:background .35s ease;" style-hover="background:#7f9a91">アクセス <span style="font-family:'Jost',sans-serif;">→</span></a>
-      <button class="hd2-toggle" onClick="{{ toggleMenu }}" aria-label="メニュー" style="align-items:center;gap:9px;height:42px;background:transparent;border:0;cursor:pointer;padding:0;"><span style="display:flex;flex-direction:column;gap:5px;"><span style="display:block;width:24px;height:2px;background:#26312c;"></span><span style="display:block;width:24px;height:2px;background:#26312c;"></span><span style="display:block;width:24px;height:2px;background:#26312c;"></span></span><span style="font-size:11px;letter-spacing:.1em;color:#26312c;">メニュー</span></button>
-    </div>
-  </div>
-
-  <!-- copy (overlapping KV) -->
-  <div class="hero-copy" style="position:absolute;left:0;top:0;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 7%;max-width:760px;pointer-events:none;">
-    <div>
-      <h1 class="hero-title" style="font-weight:400;font-size:50px;letter-spacing:.05em;line-height:1.5;color:#ffffff;mix-blend-mode:difference;white-space:nowrap;">すこやかな毎日に、<br>そっと寄り添う。</h1>
-      <p class="hero-lead" style="margin-top:28px;font-size:18px;line-height:2.1;color:#ffffff;mix-blend-mode:difference;"><span class="lead-pc">かぜから生活習慣病、健康のご相談まで。<br>あなたの「かかりつけ」として、一生のおつきあいを。</span><span class="lead-sp">かぜから生活習慣病まで、<br>地域のかかりつけ医として。</span></p>
-      <a href="first-visit.html" class="btn-line" style="margin-top:42px;display:inline-flex;align-items:center;gap:40px;border:1px solid #8a9c95;border-radius:999px;padding:16px 34px;font-size:16px;letter-spacing:.1em;color:#2f3d37;pointer-events:auto;">はじめての方へ <span style="font-family:'Jost',sans-serif;">→</span></a>
-    </div>
+  <div class="hero-copy">
+    <h1 class="hero-title">すこやかな毎日に、<br>そっと寄り添う。</h1>
+    <p class="hero-lead">
+      <span class="lead-pc">かぜから生活習慣病、健康のご相談まで。<br>あなたの「かかりつけ」として、一生のおつきあいを。</span>
+      <span class="lead-sp">かぜから生活習慣病まで、<br>地域のかかりつけ医として。</span>
+    </p>
+    <a href="first-visit.html" class="btn-line">はじめての方へ <span class="fn-arrow">→</span></a>
   </div>
 
 </div>
 
-<!-- mobile menu -->
-<div class="hd-mobile {{ menuClass }}">
-  <div class="hd-mobile-backdrop" onClick="{{ closeMenu }}"></div>
-  <div class="hd-mobile-panel">
-    <button onClick="{{ closeMenu }}" aria-label="閉じる" style="position:absolute;top:26px;right:24px;display:flex;align-items:center;gap:7px;background:transparent;border:0;cursor:pointer;color:#e7eeec;line-height:1;"><span style="font-size:24px;line-height:1;display:flex;align-items:center;">×</span><span style="font-size:12px;letter-spacing:.08em;line-height:1;display:flex;align-items:center;">閉じる</span></button>
-    <a href="index.html" onClick="{{ closeMenu }}">トップ</a>
-    <a href="about.html" onClick="{{ closeMenu }}">当院について</a>
-    <a href="first-visit.html" onClick="{{ closeMenu }}">はじめての方へ</a>
-    <a href="#hours" onClick="{{ closeMenu }}">診察時間</a>
-    <a href="first-visit.html#access" onClick="{{ closeMenu }}" style="margin-top:24px;border:0 !important;background:#7f9a91;color:#fff !important;text-align:center;border-radius:999px;padding:15px 0 !important;font-size:16px !important;">アクセス</a>
-    <div class="hd-mobile-foot" style="margin-top:auto;padding-top:28px;display:flex;flex-direction:column;gap:12px;">
-      <a href="privacy.html" onClick="{{ closeMenu }}">情報セキュリティ基本方針</a>
-      <a href="facility.html" onClick="{{ closeMenu }}">施設基準</a>
-    </div>
-  </div>
+<!-- Sticky follow header — position:fixed, slides in on scroll -->
+<div class="hd2">
+  <a href="index.html" class="hd2-brand">
+    <span class="hd2-brand-text">
+      <span class="hd2-brand-name">山田クリニック</span>
+      <span class="hd2-brand-en">YAMADA CLINIC</span>
+    </span>
+  </a>
+  <nav class="hd2-nav">
+    <a href="index.html">トップ</a>
+    <a href="about.html">当院について</a>
+    <a href="first-visit.html">はじめての方へ</a>
+    <a href="first-visit.html#access" class="hd2-cta">アクセス <span class="fn-arrow">→</span></a>
+  </nav>
+  <label for="navtoggle" class="hd2-toggle" aria-label="メニュー">
+    <span class="hd-bars"><i></i><i></i><i></i></span>
+    <span class="hd-blabel">メニュー</span>
+  </label>
 </div>
 
-<!-- ===== below the fold ===== -->
-<div style="font-family:'Zen Kaku Gothic New',sans-serif;color:#1f2a26;">
+<main class="below-fold">
 
-  <!-- concept 3col -->
-  <div class="sec-care" style="padding:104px 7% 92px;text-align:center;">
-    <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:18px;">OUR CARE</div>
-    <h2 class="sec-h2" style="font-weight:400;font-size:32px;letter-spacing:.05em;line-height:1.7;color:#26312c;">まちの安心を、<br class="brsp-top">医療の確かさで。</h2>
-    <div class="care-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:44px;margin-top:66px;text-align:left;max-width:1180px;margin-left:auto;margin-right:auto;">
+  <!-- Care -->
+  <section class="sec-care">
+    <p class="sec-eyebrow">OUR CARE</p>
+    <h2 class="sec-h2">まちの安心を、<br class="brsp-top">医療の確かさで。</h2>
+    <div class="care-grid">
+      <article>
+        <div class="care-ph care-ph-1"></div>
+        <p class="care-eyebrow">01 ／ SPECIALTY</p>
+        <h3 class="care-title">専門の医療</h3>
+        <p class="care-desc">糖尿病、甲状腺・内分泌疾患、骨粗鬆症、脂質異常症、肥満症、メタボリック症候群を専門に診療しています。</p>
+      </article>
+      <article>
+        <div class="care-ph care-ph-2"></div>
+        <p class="care-eyebrow">02 ／ ACCESS</p>
+        <h3 class="care-title">アクセスの良さ</h3>
+        <p class="care-desc">京阪電鉄香里園駅より徒歩5分以内のアクセスの良さをいかして地域医療に貢献したいと願っています。</p>
+      </article>
+      <article>
+        <div class="care-ph care-ph-3"></div>
+        <p class="care-eyebrow">03 ／ DIAGNOSIS</p>
+        <h3 class="care-title">充実の診察</h3>
+        <p class="care-desc">最新の腰椎骨密度測定装置により、正確で迅速な骨粗鬆症の診断が可能です。また、動脈硬化の診断や自律神経機能の評価も、生理学的に短時間で施行しています。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Departments -->
+  <section class="sec-dept">
+    <div class="dept-head">
       <div>
-        <div class="ph" style="height:240px;border-radius:2px;background:#dbe4df url('assets/care-03.png') center/cover no-repeat;"></div>
-        <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.24em;color:#7f9a91;margin:22px 0 9px;">01 ／ SPECIALTY</div>
-        <div style="font-size:19px;letter-spacing:.04em;margin-bottom:12px;">専門の医療</div>
-        <p style="font-size:18px;line-height:1.95;color:#66706a;">糖尿病、甲状腺・内分泌疾患、骨粗鬆症、脂質異常症、肥満症、メタボリック症候群を専門に診療しています。</p>
-      </div>
-      <div>
-        <div class="ph" style="height:240px;border-radius:2px;background:#d4ded9 url('assets/care-02.png') center/cover no-repeat;"></div>
-        <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.24em;color:#7f9a91;margin:22px 0 9px;">02 ／ ACCESS</div>
-        <div style="font-size:19px;letter-spacing:.04em;margin-bottom:12px;">アクセスの良さ</div>
-        <p style="font-size:18px;line-height:1.95;color:#66706a;">京阪電鉄香里園駅より徒歩5分以内のアクセスの良さをいかして地域医療に貢献したいと願っています。</p>
-      </div>
-      <div>
-        <div class="ph" style="height:240px;border-radius:2px;background:#d8e1dc url('assets/care-01.png') center/cover no-repeat;"></div>
-        <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.24em;color:#7f9a91;margin:22px 0 9px;">03 ／ DIAGNOSIS</div>
-        <div style="font-size:19px;letter-spacing:.04em;margin-bottom:12px;">充実の診察</div>
-        <p style="font-size:18px;line-height:1.95;color:#66706a;">最新の腰椎骨密度測定装置により、正確で迅速な骨粗鬆症の診断が可能です。また、動脈硬化の診断や自律神経機能の評価も、生理学的に短時間で施行しています。</p>
+        <p class="sec-eyebrow">DEPARTMENTS</p>
+        <h2 class="sec-h2">診療科のご案内</h2>
       </div>
     </div>
-  </div>
-
-  <!-- 診療科 -->
-  <div class="sec-dept" style="padding:92px 7%;background:#f6f8f7;">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;max-width:1180px;margin-left:auto;margin-right:auto;">
-      <div>
-        <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:14px;">DEPARTMENTS</div>
-        <h2 class="sec-h2" style="font-weight:400;font-size:32px;letter-spacing:.05em;color:#26312c;">診療科のご案内</h2>
-      </div>
+    <div class="dept-grid">
+      <article class="dept-item">
+        <span class="dept-num">01</span>
+        <h3 class="dept-name">糖尿病内科</h3>
+        <p class="dept-desc">血糖コントロールから合併症の予防まで糖尿病を継続的に管理し、甲状腺や内分泌疾患の診療も行います。</p>
+      </article>
+      <article class="dept-item">
+        <span class="dept-num">02</span>
+        <h3 class="dept-name">内科</h3>
+        <p class="dept-desc">発熱・かぜ・腹痛など、日常の体調不良全般を幅広く診療します。</p>
+      </article>
+      <article class="dept-item">
+        <span class="dept-num">03</span>
+        <h3 class="dept-name">放射線科</h3>
+        <p class="dept-desc">X線撮影・骨密度測定など、画像による正確な診断を行います。</p>
+      </article>
     </div>
-    <div class="dept-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e3e9e6;border:1px solid #e3e9e6;max-width:1180px;margin:0 auto;">
-      <div style="background:#fff;padding:40px 36px;"><div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#aeb8b3;">01</div><div style="font-size:19px;letter-spacing:.04em;margin:14px 0 9px;">糖尿病内科</div><p style="font-size:18px;line-height:1.85;color:#737d77;">血糖コントロールから合併症の予防まで糖尿病を継続的に管理し、甲状腺や内分泌疾患の診療も行います。</p></div>
-      <div style="background:#fff;padding:40px 36px;"><div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#aeb8b3;">02</div><div style="font-size:19px;letter-spacing:.04em;margin:14px 0 9px;">内科</div><p style="font-size:18px;line-height:1.85;color:#737d77;">発熱・かぜ・腹痛など、日常の体調不良全般を幅広く診療します。</p></div>
-      <div style="background:#fff;padding:40px 36px;"><div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;color:#aeb8b3;">03</div><div style="font-size:19px;letter-spacing:.04em;margin:14px 0 9px;">放射線科</div><p style="font-size:18px;line-height:1.85;color:#737d77;">X線撮影・骨密度測定など、画像による正確な診断を行います。</p></div>
-    </div>
-  </div>
+  </section>
 
-  <!-- hours + access -->
-  <div id="access" style="scroll-margin-top:90px;"></div>
-  <div class="ha-grid" id="hours" style="display:grid;grid-template-columns:1.02fr 1fr;scroll-margin-top:90px;">
-    <div class="ha-hours" style="padding:88px 6%;">
-      <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:16px;">HOURS</div>
-      <h2 class="sec-h2" style="font-weight:400;font-size:28px;letter-spacing:.05em;margin-bottom:30px;">診察時間</h2>
+  <!-- Hours & Access -->
+  <section class="ha-grid" id="hours">
+    <div class="ha-hours">
+      <p class="sec-eyebrow">HOURS</p>
+      <h2 class="sec-h2">診察時間</h2>
       <!-- お知らせ（夏季休診など。掲載時はこのコメントを外す）
-      <div style="display:flex;align-items:center;gap:18px;margin-bottom:26px;padding:16px 22px;background:#f6f8f7;border-radius:2px;">
-        <span style="flex:none;font-size:14px;letter-spacing:.12em;color:#566f67;">お知らせ</span>
-        <span style="flex:none;width:1px;height:16px;background:#cbd5d0;"></span>
-        <span style="font-size:16px;letter-spacing:.04em;color:#46514b;">8/12(金)〜15(月)は夏季休診です</span>
+      <div class="hours-notice">
+        <span class="hours-notice-label">お知らせ</span>
+        <span class="hours-notice-sep"></span>
+        <span class="hours-notice-text">8/12(金)〜15(月)は夏季休診です</span>
       </div>
       -->
-      <table class="hours-table" style="width:100%;border-collapse:collapse;font-size:18px;">
-        <thead><tr style="color:#8b958f;"><th style="text-align:left;padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;"></th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">月</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">火</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">水</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">木</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">金</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">土</th><th style="padding:12px 6px;font-weight:400;border-bottom:1px solid #e3e9e6;">日祝</th></tr></thead>
-        <tbody style="color:#46514b;">
-          <tr><td style="padding:15px 6px;border-bottom:1px solid #eef1ef;color:#737d77;white-space:nowrap;">9:00–12:30</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;">●</td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td></tr>
-          <tr><td style="padding:15px 6px;border-bottom:1px solid #eef1ef;color:#737d77;white-space:nowrap;">14:00–16:00</td><td style="text-align:center;border-bottom:1px solid #eef1ef;"><span style="display:inline-block;min-width:24px;height:22px;line-height:20px;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:13px;">栄</span></td><td style="text-align:center;border-bottom:1px solid #eef1ef;"><span style="display:inline-block;min-width:24px;height:22px;line-height:20px;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:13px;">往</span></td><td style="text-align:center;border-bottom:1px solid #eef1ef;"><span style="display:inline-block;min-width:24px;height:22px;line-height:20px;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:13px;">往</span></td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td><td style="text-align:center;border-bottom:1px solid #eef1ef;color:#c3cac6;">—</td></tr>
-          <tr><td style="padding:15px 6px;color:#737d77;white-space:nowrap;">18:00–20:00</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;">●</td><td style="text-align:center;color:#c3cac6;">—</td><td style="text-align:center;color:#c3cac6;">—</td></tr>
+      <table class="hours-table">
+        <thead>
+          <tr>
+            <th></th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日祝</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hours-time">9:00–12:30</td>
+            <td class="hours-cell">●</td>
+            <td class="hours-cell">●</td>
+            <td class="hours-cell">●</td>
+            <td class="hours-cell">●</td>
+            <td class="hours-cell">●</td>
+            <td class="hours-cell">●</td>
+            <td class="hours-cell hours-closed">—</td>
+          </tr>
+          <tr>
+            <td class="hours-time">14:00–16:00</td>
+            <td class="hours-cell"><span class="badge-label">栄</span></td>
+            <td class="hours-cell"><span class="badge-label">往</span></td>
+            <td class="hours-cell"><span class="badge-label">往</span></td>
+            <td class="hours-cell hours-closed">—</td>
+            <td class="hours-cell hours-closed">—</td>
+            <td class="hours-cell hours-closed">—</td>
+            <td class="hours-cell hours-closed">—</td>
+          </tr>
+          <tr>
+            <td class="hours-time hours-time-last">18:00–20:00</td>
+            <td class="hours-cell-last">●</td>
+            <td class="hours-cell-last">●</td>
+            <td class="hours-cell-last">●</td>
+            <td class="hours-cell-last">●</td>
+            <td class="hours-cell-last">●</td>
+            <td class="hours-cell-last hours-closed">—</td>
+            <td class="hours-cell-last hours-closed">—</td>
+          </tr>
         </tbody>
       </table>
-      <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:16px 24px;font-size:13.5px;color:#5d6b65;">
-        <span style="display:inline-flex;align-items:center;gap:8px;"><span style="color:#46514b;">●</span>診療</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;"><span style="display:inline-block;min-width:22px;height:20px;line-height:18px;text-align:center;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:12px;">栄</span>栄養指導</span>
-        <span style="display:inline-flex;align-items:center;gap:8px;"><span style="display:inline-block;min-width:22px;height:20px;line-height:18px;text-align:center;border:1px solid #aebfb8;border-radius:2px;background:#f1f5f3;color:#566f67;font-size:12px;">往</span>往診</span>
+      <div class="hours-legend">
+        <span class="hours-legend-item"><span class="hours-legend-dot">●</span>診療</span>
+        <span class="hours-legend-item"><span class="badge-label-sm">栄</span>栄養指導</span>
+        <span class="hours-legend-item"><span class="badge-label-sm">往</span>往診</span>
       </div>
-      <p style="margin-top:18px;font-size:16px;line-height:1.95;color:#bf6a45;font-weight:500;">※ 栄養指導は予約制です。<br>※ 往診の時間帯は、外来診療をお休みします。ご注意ください。</p>
-      <p style="margin-top:10px;font-size:16px;line-height:1.95;color:#8b958f;">※ 受付は診察終了の30分前まで。　休診日：日曜・祝日</p>
-      <div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;">
-        <span style="font-size:13px;color:#5d6b65;border:1px solid #d3ddd8;border-radius:2px;padding:7px 16px;letter-spacing:.04em;">バリアフリー対応</span>
-        <span style="font-size:13px;color:#5d6b65;border:1px solid #d3ddd8;border-radius:2px;padding:7px 16px;letter-spacing:.04em;">19時以降診療可</span>
-        <span style="font-size:13px;color:#5d6b65;border:1px solid #d3ddd8;border-radius:2px;padding:7px 16px;letter-spacing:.04em;">マイナ保険証対応</span>
+      <p class="hours-note-warn">※ 栄養指導は予約制です。<br>※ 往診の時間帯は、外来診療をお休みします。ご注意ください。</p>
+      <p class="hours-note">※ 受付は診察終了の30分前まで。　休診日：日曜・祝日</p>
+      <div class="info-tags">
+        <span class="info-tag">バリアフリー対応</span>
+        <span class="info-tag">19時以降診療可</span>
+        <span class="info-tag">マイナ保険証対応</span>
       </div>
     </div>
 
-    <!-- google map -->
-    <div class="access-mobile" style="display:none;padding:0 7% 24px;">
-      <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:14px;">ACCESS</div>
-      <div style="font-size:17px;letter-spacing:.04em;line-height:1.85;color:#2b352f;">〒572-0084<br>大阪府寢屋川市香里南之町10-22</div>
-      <div style="margin-top:12px;font-size:16px;line-height:1.85;color:#66706a;">京阪本線「香里園」駅より南へ徒歩約5分<br>TEL 072-831-3917</div>
+    <div class="access-mobile">
+      <p class="sec-eyebrow">ACCESS</p>
+      <p class="access-addr">〒572-0084<br>大阪府寢屋川市香里南之町10-22</p>
+      <p class="access-info">京阪本線「香里園」駅より南へ徒歩約5分<br>TEL 072-831-3917</p>
     </div>
-    <!-- map area -->
-    <div class="ha-map" style="position:relative;min-height:560px;background:#e7eeeb;overflow:hidden;">
-      <iframe src="https://www.google.com/maps?q=%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82%E9%A6%99%E9%87%8C%E5%8D%97%E4%B9%8B%E7%94%BA10-22&z=16&hl=ja&output=embed" title="山田クリニックの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
-      <div class="access-card" style="position:absolute;left:32px;bottom:32px;z-index:2;background:rgba(255,255,255,.96);padding:26px 30px;border-radius:3px;max-width:340px;box-shadow:0 4px 20px rgba(40,60,52,.16);">
-        <div style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.3em;color:#7f9a91;margin-bottom:12px;">ACCESS</div>
-        <div style="font-size:16px;letter-spacing:.04em;line-height:1.85;color:#2b352f;">〒572-0084<br>大阪府寝屋川市香里南之町10-22</div>
-        <div style="margin-top:12px;font-size:16px;line-height:1.85;color:#66706a;">京阪本線「香里園」駅より南へ徒歩約5分<br>TEL 072-831-3917</div>
-        <a href="https://www.google.com/maps/search/?api=1&query=34.7819077,135.6309742" target="_blank" rel="noopener" class="btn-line" style="margin-top:18px;display:inline-flex;align-items:center;gap:14px;border:1px solid #8a9c95;border-radius:999px;padding:11px 22px;font-size:13.5px;letter-spacing:.06em;color:#2f3d37;">Googleマップで開く <span style="font-family:'Jost',sans-serif;">↗</span></a>
+
+    <div class="ha-map">
+      <iframe src="https://www.google.com/maps?q=%E5%AF%9D%E5%B1%8B%E5%B7%9D%E5%B8%82%E9%A6%99%E9%87%8C%E5%8D%97%E4%B9%8B%E7%94%BA10-22&z=16&hl=ja&output=embed" title="山田クリニックの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+      <div class="access-card">
+        <p class="sec-eyebrow">ACCESS</p>
+        <p class="access-addr">〒572-0084<br>大阪府寝屋川市香里南之町10-22</p>
+        <p class="access-info">京阪本線「香里園」駅より南へ徒歩約5分<br>TEL 072-831-3917</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=34.7819077,135.6309742" target="_blank" rel="noopener" class="btn-line">Googleマップで開く <span class="fn-arrow">↗</span></a>
       </div>
     </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="foot-row">
+    <div>
+      <div class="foot-brand-name">山田クリニック</div>
+      <div class="foot-brand-en">YAMADA CLINIC</div>
+      <div class="foot-addr">〒572-0084 大阪府寝屋川市香里南之町10-22<br>TEL 072-831-3917</div>
+    </div>
+    <nav class="foot-links">
+      <div class="foot-col">
+        <div class="foot-col-title">CLINIC</div>
+        <a href="about.html#message">当院について</a>
+        <a href="about.html#doctor">院長紹介</a>
+        <a href="about.html#equipment">設備紹介</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-col-title">VISIT</div>
+        <a href="first-visit.html">はじめての方へ</a>
+        <a href="index.html#hours">診察時間</a>
+        <a href="first-visit.html#access">アクセス</a>
+      </div>
+    </nav>
   </div>
-
-  <!-- footer -->
-  <div class="foot" style="background:#2a352f;color:#cfd8d3;padding:74px 7% 42px;">
-    <div class="foot-row" style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.12);max-width:1180px;margin:0 auto;">
-      <div>
-        <div style="font-size:18px;letter-spacing:.12em;font-weight:500;color:#fff;">山田クリニック</div>
-        <div style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.4em;color:#8fa39b;margin-top:8px;">YAMADA CLINIC</div>
-        <div style="margin-top:24px;font-size:16px;line-height:2;color:#aeb9b3;">〒572-0084 大阪府寝屋川市香里南之町10-22<br>TEL 072-831-3917</div>
-      </div>
-      <div class="foot-links" style="display:flex;gap:64px;font-size:16px;line-height:2.3;color:#b9c3bd;">
-        <div style="display:flex;flex-direction:column;gap:6px;"><div style="color:#7f9a91;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;margin-bottom:4px;">CLINIC</div><a href="about.html" style="transition:color .3s ease;" style-hover="color:#fff">当院について</a><a href="about.html#doctor" style="transition:color .3s ease;" style-hover="color:#fff">院長紹介</a><a href="about.html#equipment" style="transition:color .3s ease;" style-hover="color:#fff">設備紹介</a></div>
-        <div style="display:flex;flex-direction:column;gap:6px;"><div style="color:#7f9a91;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;margin-bottom:4px;">VISIT</div><a href="first-visit.html" style="transition:color .3s ease;" style-hover="color:#fff">初めての方へ</a><a href="index.html#hours" style="transition:color .3s ease;" style-hover="color:#fff">診察時間</a><a href="first-visit.html#access" style="transition:color .3s ease;" style-hover="color:#fff">アクセス</a></div>
-      </div>
+  <div class="foot-bottom">
+    <div class="foot-legal">
+      <a href="privacy.html">情報セキュリティ基本方針</a>
+      <a href="facility.html">施設基準</a>
     </div>
-    <div style="max-width:1180px;margin:26px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;"><div style="display:flex;flex-wrap:wrap;gap:20px;font-size:12px;color:#9aa39e;"><a href="privacy.html" style="transition:color .3s ease;" style-hover="color:#fff">情報セキュリティ基本方針</a><a href="facility.html" style="transition:color .3s ease;" style-hover="color:#fff">施設基準</a></div><div style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;color:#7d8a83;">© 2026 YAMADA CLINIC</div></div>
+    <div class="foot-copy">© 2026 YAMADA CLINIC</div>
   </div>
+</footer>
 
-</div>
 </x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  state = { menuOpen: false, scrolled: false };
-  renderVals() {
-    return {
-      heroRef: (el) => { this._hero = el; },
-      sentinelRef: (el) => { this._sentinel = el; },
-      menuClass: this.state.menuOpen ? 'open' : '',
-      hdClass: this.state.scrolled ? 'scrolled' : '',
-      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
-      closeMenu: () => this.setState({ menuOpen: false }),
-    };
-  }
-  componentDidMount() {
-    this._apply = (s) => {
-      if (s !== this.state.scrolled) this.setState({ scrolled: s });
-      const bg = this._hero && this._hero.querySelector('.hd-bg');
-      if (bg) bg.style.opacity = s ? '1' : '0';
-    };
-    if (this._sentinel) {
-      this._io = new IntersectionObserver(
-        ([entry]) => this._apply(!entry.isIntersecting),
-        { threshold: 0 },
-      );
-      this._io.observe(this._sentinel);
-    }
-    this._onScroll = () => {
-      const y = window.scrollY || document.documentElement.scrollTop || 0;
-      this._apply(y > 40);
-    };
-    window.addEventListener('scroll', this._onScroll, { passive: true });
-    this._onScroll();
-    const root = this._hero;
-    if (!root) return;
-    const slides = root.querySelectorAll('.kv-slide');
-    if (slides.length < 2) return;
-    const zoom = (idx) => {
-      const img = slides[idx].querySelector('.kv-img');
-      if (!img) return;
-      img.style.transition = 'none';
-      img.style.transform = 'scale(1.0)';
-      void img.offsetWidth;            // commit reset before re-enabling transition
-      img.style.transition = 'transform 6.2s ease-out';
-      img.style.transform = 'scale(1.09)';
-    };
-    let i = 0;
-    zoom(0);                            // start the first slide's slow zoom
-    this._timer = setInterval(() => {
-      const next = (i + 1) % slides.length;
-      zoom(next);                       // reset + restart zoom while still hidden
-      slides[next].classList.add('is-active');
-      slides[i].classList.remove('is-active'); // outgoing keeps its scale, just fades
-      i = next;
-    }, 5200);
-  }
-  componentWillUnmount() {
-    if (this._timer) clearInterval(this._timer);
-    if (this._io) this._io.disconnect();
-    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
-  }
-}
-</script>
 </body>
 </html>

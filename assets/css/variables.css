@@ -1,0 +1,37 @@
+:root{
+  /* colors — brand */
+  --c-green:#7f9a91;
+  --c-dark:#26312c;
+  --c-primary:#2f3d37;
+  --c-text:#1f2a26;
+  --c-body:#46514b;
+  --c-muted:#8b958f;
+  --c-sub:#9aa39e;
+  --c-mid:#566f67;
+  --c-desc:#66706a;
+  --c-border:#e3e9e6;
+  --c-bg-light:#f6f8f7;
+  --c-bg-map:#e7eeeb;
+  --c-num:#aeb8b3;
+  --c-warn:#bf6a45;
+
+  /* colors — footer */
+  --c-footer:#2a352f;
+  --c-footer-text:#cfd8d3;
+  --c-footer-addr:#aeb9b3;
+  --c-footer-link:#b9c3bd;
+  --c-footer-mid:#8fa39b;
+  --c-footer-copy:#7d8a83;
+
+  /* fonts */
+  --f-ja:'Zen Kaku Gothic New',sans-serif;
+  --f-en:'Jost',sans-serif;
+
+  /* spacing */
+  --sp-side:7%;
+  --sp-sec:clamp(64px,8vw,100px);
+  --w-max:1180px;
+  /* Horizontal padding that behaves like an inner container: always ≥ --sp-side,
+     but expands beyond --w-max so the content never exceeds that width. */
+  --container-px:max(var(--sp-side),calc((100% - var(--w-max)) / 2));
+}

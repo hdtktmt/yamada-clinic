@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cwebp -version)",
+      "Bash(ffmpeg -version)",
+      "Bash(magick -version)",
+      "Bash(convert -version)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
+      "Bash(python3 -c \"import PIL; print\\('PIL available'\\)\")",
+      "Bash(node -e \"const sharp=require\\('sharp'\\); console.log\\('sharp OK'\\)\")",
+      "Bash(brew list *)",
+      "Bash(python3)",
+      "Bash(grep -v '^$')",
+      "Bash(cat > *)",
+      "Bash(grep -roh '\\\\.[a-z\\\\-]*\\\\s*{' \"/Users/hidetaka/Downloads/dist 2/assets/css/\" | sed 's/[[:space:]]*{//g' | sed 's/^\\\\.//g' | sort -u > /tmp/css_classes_defined.txt *)",
+      "Read(//tmp/**)",
+      "Bash(cat)",
+      "Bash(bash /tmp/check_images.sh)",
+      "Bash(bash /tmp/unused_images.sh)",
+      "Read(//Users/hidetaka/Downloads/**)",
+      "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/care/*.png' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/care/')",
+      "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/common/*.jpg' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/common/')",
+      "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/doctor/*.png' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/doctor/')",
+      "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/facility/*.jpg' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/facility/')",
+      "Bash(mv '/Users/hidetaka/Downloads/dist 2/assets/images/kv/*.png' '/Users/hidetaka/Downloads/dist 2/assets/images/_originals/kv/')"
+    ],
+    "additionalDirectories": [
+      "/tmp"
+    ]
+  }
+}

@@ -1,73 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>x-dc{display:none!important}</style>
+  <script src="assets/js/support.js" defer></script>
 </head>
-<body>
+<body class="subpage">
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Jost:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-<style>
-  *{margin:0;padding:0;box-sizing:border-box;font-feature-settings:'palt' 1;font-kerning:normal}
-  body{background:#fff;font-family:'Zen Kaku Gothic New',sans-serif;color:#1f2a26;font-size:18px;font-feature-settings:'palt' 1;font-kerning:normal;letter-spacing:.04em;text-rendering:optimizeLegibility}
-  a{text-decoration:none;color:inherit}
-  .nav{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:14px 22px;font-size:16px;color:#46514b}
-  .nav a{transition:opacity .3s ease,color .3s ease}
-  .nav a:hover{opacity:.6}
-  .nav a.cta{transition:background .35s ease}
-  .nav a.cta:hover{opacity:1;background:#7f9a91 !important}
-  .burger{display:none;align-items:center;gap:9px;cursor:pointer}
-  .burger .bars{display:flex;flex-direction:column;gap:5px}
-  .burger .bars i{display:block;width:24px;height:2px;background:#26312c}
-  .burger .blabel{font-size:11px;letter-spacing:.1em;color:#26312c}
-  .mnav{display:none}
-  .mpanel{position:fixed;top:0;right:0;height:100%;width:80%;max-width:340px;background:#2a352f;z-index:80;transform:translateX(100%);transition:transform .42s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;gap:4px;padding:90px 36px 40px}
-  .mbackdrop{position:fixed;inset:0;z-index:79;background:rgba(20,28,24,0);pointer-events:none;transition:background .42s ease}
-  .mpanel a{color:#e7eeec;font-size:17px;letter-spacing:.06em;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-  .mpanel{overflow-y:auto}
-  .mclose{position:absolute;top:22px;right:24px;display:flex;align-items:center;gap:7px;color:#e7eeec;cursor:pointer;border:0 !important;padding:0 !important}
-  .mclose-x{font-size:24px;line-height:1;display:flex;align-items:center}
-  .mclose-t{font-size:12px;letter-spacing:.08em;line-height:1;display:flex;align-items:center}
-  .mfoot{margin-top:auto;padding-top:26px;display:flex;flex-direction:column;gap:10px}
-  .mfoot a{font-size:14px !important;color:#9fb4ad !important;padding:0 !important;border:0 !important}
-  .navtoggle:checked ~ .mnav .mpanel{transform:translateX(0);box-shadow:-12px 0 40px rgba(0,0,0,.2)}
-  .navtoggle:checked ~ .mnav .mbackdrop{background:rgba(20,28,24,.42);pointer-events:auto}
-  @media (max-width:900px){.nav{display:none}.burger{display:flex}.mnav{display:block}}
-  @media (max-width:760px){.foot-row{flex-direction:column !important;gap:32px !important}}
-</style>
-<script>
-(function(){
-  function jump(smooth){
-    var h=location.hash; if(!h||h.length<2) return;
-    var el=document.getElementById(decodeURIComponent(h.slice(1)));
-    if(el){ var y=el.getBoundingClientRect().top+window.pageYOffset-84; window.scrollTo({top:y,behavior:smooth?'smooth':'auto'}); }
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<title>施設基準｜山田クリニック｜寝屋川市</title>
+<meta name="description" content="山田クリニックが地方厚生局へ届出を行っている施設基準の一覧です。電子的診療情報連携・明細書発行体制・医療DX推進体制整備などに対応しています。">
+<link rel="canonical" href="https://80da.jp/facility.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="山田クリニック">
+<meta property="og:title" content="施設基準｜山田クリニック｜寝屋川市">
+<meta property="og:description" content="山田クリニックが地方厚生局へ届出を行っている施設基準の一覧です。電子的診療情報連携・明細書発行体制・医療DX推進体制整備などに対応しています。">
+<meta property="og:url" content="https://80da.jp/facility.html">
+<meta property="og:image" content="https://80da.jp/assets/images/kv/kv-clinic-01.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="施設基準｜山田クリニック｜寝屋川市">
+<meta name="twitter:description" content="山田クリニックが地方厚生局へ届出を行っている施設基準の一覧です。電子的診療情報連携・明細書発行体制・医療DX推進体制整備などに対応しています。">
+<meta name="twitter:image" content="https://80da.jp/assets/images/kv/kv-clinic-01.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "@id": "https://80da.jp/#clinic",
+  "name": "山田クリニック",
+  "url": "https://80da.jp/",
+  "telephone": "072-831-3917",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "572-0084",
+    "addressRegion": "大阪府",
+    "addressLocality": "寝屋川市",
+    "streetAddress": "香里南之町10-22"
   }
-  window.addEventListener('load',function(){ setTimeout(function(){jump(false);},350); });
-  window.addEventListener('hashchange',function(){ jump(true); });
-})();
+}
 </script>
 </helmet>
 
 <input id="navtoggle" class="navtoggle" type="checkbox" hidden>
-<header style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 7%;background:#fff;border-bottom:1px solid #e3e9e6;">
-  <a href="index.html" style="display:flex;align-items:center;gap:12px;flex:none;">
-    <span style="line-height:1.35;">
-      <span style="display:block;font-size:16px;font-weight:500;letter-spacing:.12em;color:#26312c;">山田クリニック</span>
-      <span style="display:block;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:.36em;color:#9aa39e;">YAMADA CLINIC</span>
+<header class="site-header">
+  <a href="index.html" class="brand-link">
+    <span class="brand-text">
+      <span class="brand-name">山田クリニック</span>
+      <span class="brand-en">YAMADA CLINIC</span>
     </span>
   </a>
   <nav class="nav">
-    <a href="index.html" style-hover="color:#2f3d37">トップ</a>
-    <a href="about.html" style-hover="color:#2f3d37">当院について</a>
-    <a href="first-visit.html" style-hover="color:#2f3d37">はじめての方へ</a>
-    <a href="first-visit.html#access" class="cta" style="display:inline-flex;align-items:center;gap:8px;background:#2f3d37;color:#fff;padding:11px 22px;border-radius:999px;font-size:13px;" style-hover="background:#7f9a91">アクセス <span style="font-family:'Jost',sans-serif;">→</span></a>
+    <a href="index.html">トップ</a>
+    <a href="about.html">当院について</a>
+    <a href="first-visit.html">はじめての方へ</a>
+    <a href="first-visit.html#access" class="cta">アクセス <span class="fn-arrow">→</span></a>
   </nav>
   <label for="navtoggle" class="burger" aria-label="メニュー"><span class="bars"><i></i><i></i><i></i></span><span class="blabel">メニュー</span></label>
 </header>
+
 <div class="mnav">
   <label for="navtoggle" class="mbackdrop"></label>
   <div class="mpanel">
@@ -76,51 +74,122 @@
     <a href="about.html">当院について</a>
     <a href="first-visit.html">はじめての方へ</a>
     <a href="index.html#hours">診察時間</a>
-    <a href="first-visit.html#access" style="margin-top:24px;background:#7f9a91;color:#fff;text-align:center;border-radius:999px;padding:15px 0;border-bottom:0;">アクセス</a>
-    <div class="mfoot"><a href="privacy.html">情報セキュリティ基本方針</a><a href="facility.html">施設基準</a></div>
-  </div>
-</div>
-
-<div style="padding:96px 7% 60px;background:#f6f8f7;border-bottom:1px solid #e3e9e6;">
-  <div style="max-width:880px;margin:0 auto;">
-    <div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.4em;color:#7f9a91;margin-bottom:14px;">FACILITY STANDARDS</div>
-    <h1 style="font-weight:400;font-size:clamp(28px,2vw + 20px,40px);letter-spacing:.05em;line-height:1.5;color:#26312c;">施設基準</h1>
-  </div>
-</div>
-
-<section style="padding:clamp(56px,7vw,88px) 7%;">
-  <div style="max-width:880px;margin:0 auto;">
-    <p style="font-size:16px;line-height:2;color:#46514b;">当院は、下記の施設基準について地方厚生局へ届出を行っています。</p>
-    <div style="margin-top:44px;border-top:1px solid #e3e9e6;">
-      <div style="display:grid;grid-template-columns:40px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid #e3e9e6;"><div style="font-family:'Jost',sans-serif;font-size:16px;color:#7f9a91;padding-top:3px;">01</div><div><div style="font-size:17px;letter-spacing:.04em;color:#26312c;margin-bottom:8px;">電子的診療情報連携体制整備加算</div><p style="font-size:16px;line-height:1.95;color:#66706a;">他の医療機関等と電子的に診療情報を連携できる体制を整えています。</p></div></div>
-      <div style="display:grid;grid-template-columns:40px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid #e3e9e6;"><div style="font-family:'Jost',sans-serif;font-size:16px;color:#7f9a91;padding-top:3px;">02</div><div><div style="font-size:17px;letter-spacing:.04em;color:#26312c;margin-bottom:8px;">明細書発行体制等加算</div><p style="font-size:16px;line-height:1.95;color:#66706a;">領収書発行の際、診療報酬の算定項目がわかる明細書を無料で発行しています。</p></div></div>
-      <div style="display:grid;grid-template-columns:40px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid #e3e9e6;"><div style="font-family:'Jost',sans-serif;font-size:16px;color:#7f9a91;padding-top:3px;">03</div><div><div style="font-size:17px;letter-spacing:.04em;color:#26312c;margin-bottom:8px;">外来感染対策向上加算</div><p style="font-size:16px;line-height:1.95;color:#66706a;">外来における感染防止対策に組織的に取り組んでいます。</p></div></div>
-      <div style="display:grid;grid-template-columns:40px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid #e3e9e6;"><div style="font-family:'Jost',sans-serif;font-size:16px;color:#7f9a91;padding-top:3px;">04</div><div><div style="font-size:17px;letter-spacing:.04em;color:#26312c;margin-bottom:8px;">地域支援・外来医薬品供給対応体制加算</div><p style="font-size:16px;line-height:1.95;color:#66706a;">地域のかかりつけ機能と医薬品の供給に対応する体制を整えています。</p></div></div>
-      <div style="display:grid;grid-template-columns:40px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid #e3e9e6;"><div style="font-family:'Jost',sans-serif;font-size:16px;color:#7f9a91;padding-top:3px;">05</div><div><div style="font-size:17px;letter-spacing:.04em;color:#26312c;margin-bottom:8px;">一般名処方加算</div><p style="font-size:16px;line-height:1.95;color:#66706a;">院外処方箋を発行する際に商品名ではなく、一般名（有効成分の名称）で処方する場合があります。</p></div></div>
+    <a href="first-visit.html#access" class="mnav-access">アクセス</a>
+    <div class="mfoot">
+      <a href="privacy.html">情報セキュリティ基本方針</a>
+      <a href="facility.html">施設基準</a>
     </div>
-    <p style="margin-top:40px;font-size:16px;line-height:1.95;color:#8b958f;">詳細は受付までお問い合わせください。</p>
-    <div style="margin-top:64px;padding-top:48px;border-top:1px solid #e3e9e6;"><h2 style="font-weight:400;font-size:clamp(21px,1.4vw + 15px,25px);letter-spacing:.04em;color:#26312c;margin-bottom:18px;">医療DX推進体制整備加算について</h2><p style="margin-top:16px;font-size:16px;line-height:1.95;color:#66706a;">当院では、医療DX（デジタルトランスフォーメーション）を推進し、質の高い医療を提供するため、以下の体制を整備しております。</p><ul style="margin-top:18px;display:flex;flex-direction:column;gap:10px;list-style:none;"><li style="display:grid;grid-template-columns:16px 1fr;gap:10px;font-size:16px;line-height:1.9;color:#66706a;"><span style="color:#7f9a91;">●</span><span>オンライン請求を行っております。</span></li><li style="display:grid;grid-template-columns:16px 1fr;gap:10px;font-size:16px;line-height:1.9;color:#66706a;"><span style="color:#7f9a91;">●</span><span>オンライン資格確認を行う体制を有しています。</span></li><li style="display:grid;grid-template-columns:16px 1fr;gap:10px;font-size:16px;line-height:1.9;color:#66706a;"><span style="color:#7f9a91;">●</span><span>マイナ保険証（マイナンバーカード）から取得した診療情報（受診歴、薬剤情報、特定健診情報等）を、医師が診察室等で閲覧・活用できる体制を有しています。</span></li><li style="display:grid;grid-template-columns:16px 1fr;gap:10px;font-size:16px;line-height:1.9;color:#66706a;"><span style="color:#7f9a91;">●</span><span>マイナ保険証の利用を促進し、医療DXを通じた質の高い医療の提供に努めています。</span></li></ul><p style="margin-top:18px;font-size:16px;line-height:1.95;color:#66706a;">当院は、これらの取り組みにより、患者様の診療情報を正確に取得・活用し、より安全で質の高い医療の提供に努めてまいります。</p></div>
-    <div style="margin-top:56px;padding-top:48px;border-top:1px solid #e3e9e6;"><h2 style="font-weight:400;font-size:clamp(21px,1.4vw + 15px,25px);letter-spacing:.04em;color:#26312c;margin-bottom:18px;">ベースアップ評価料算定について</h2><p style="margin-top:16px;font-size:16px;line-height:1.95;color:#66706a;">当院では、診療報酬改定により新設された「ベースアップ評価料」を算定しております。</p><p style="margin-top:16px;font-size:16px;line-height:1.95;color:#66706a;">本評価料は、医療従事者の処遇（給与等）改善を行い、患者様により質の高い医療を安全に提供できる体制を整えることを目的としています。</p><p style="margin-top:16px;font-size:16px;line-height:1.95;color:#66706a;">これに伴い、診療費の一部にご負担が生じる場合がございますが、皆様からいただく収益は当院で働くスタッフの賃上げのために全額充当させていただきます。</p><p style="margin-top:16px;font-size:16px;line-height:1.95;color:#66706a;">何卒ご理解とご協力を賜りますようお願い申し上げます。</p><div style="margin-top:24px;font-size:16px;line-height:2;color:#46514b;">医療法人山田クリニック<br>院長　山田敬行</div></div>
   </div>
-</section>
+</div>
 
-<footer style="background:#2a352f;color:#cfd8d3;padding:64px 7% 38px;">
-  <div class="foot-row" style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12);">
+<main>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner--sm">
+      <div class="page-eyebrow">FACILITY STANDARDS</div>
+      <h1 class="page-title--sm">施設基準</h1>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <section class="sec-main">
+    <div class="sec-main-inner">
+      <p class="sec-intro">当院は、下記の施設基準について地方厚生局へ届出を行っています。</p>
+      <div class="facility-list">
+        <article class="facility-item">
+          <span class="facility-num">01</span>
+          <div class="facility-body">
+            <div class="facility-title">電子的診療情報連携体制整備加算</div>
+            <p class="facility-desc">他の医療機関等と電子的に診療情報を連携できる体制を整えています。</p>
+          </div>
+        </article>
+        <article class="facility-item">
+          <span class="facility-num">02</span>
+          <div class="facility-body">
+            <div class="facility-title">明細書発行体制等加算</div>
+            <p class="facility-desc">領収書発行の際、診療報酬の算定項目がわかる明細書を無料で発行しています。</p>
+          </div>
+        </article>
+        <article class="facility-item">
+          <span class="facility-num">03</span>
+          <div class="facility-body">
+            <div class="facility-title">外来感染対策向上加算</div>
+            <p class="facility-desc">外来における感染防止対策に組織的に取り組んでいます。</p>
+          </div>
+        </article>
+        <article class="facility-item">
+          <span class="facility-num">04</span>
+          <div class="facility-body">
+            <div class="facility-title">地域支援・外来医薬品供給対応体制加算</div>
+            <p class="facility-desc">地域のかかりつけ機能と医薬品の供給に対応する体制を整えています。</p>
+          </div>
+        </article>
+        <article class="facility-item">
+          <span class="facility-num">05</span>
+          <div class="facility-body">
+            <div class="facility-title">一般名処方加算</div>
+            <p class="facility-desc">院外処方箋を発行する際に商品名ではなく、一般名（有効成分の名称）で処方する場合があります。</p>
+          </div>
+        </article>
+      </div>
+      <p class="facility-footnote">詳細は受付までお問い合わせください。</p>
+      <div class="facility-sub">
+        <h2 class="facility-sub-h2">医療DX推進体制整備加算について</h2>
+        <p class="facility-desc facility-desc--mt16">当院では、医療DX（デジタルトランスフォーメーション）を推進し、質の高い医療を提供するため、以下の体制を整備しております。</p>
+        <ul class="facility-ul">
+          <li class="facility-li"><span class="facility-li-dot">●</span><span>オンライン請求を行っております。</span></li>
+          <li class="facility-li"><span class="facility-li-dot">●</span><span>オンライン資格確認を行う体制を有しています。</span></li>
+          <li class="facility-li"><span class="facility-li-dot">●</span><span>マイナ保険証（マイナンバーカード）から取得した診療情報（受診歴、薬剤情報、特定健診情報等）を、医師が診察室等で閲覧・活用できる体制を有しています。</span></li>
+          <li class="facility-li"><span class="facility-li-dot">●</span><span>マイナ保険証の利用を促進し、医療DXを通じた質の高い医療の提供に努めています。</span></li>
+        </ul>
+        <p class="facility-desc facility-desc--mt18">当院は、これらの取り組みにより、患者様の診療情報を正確に取得・活用し、より安全で質の高い医療の提供に努めてまいります。</p>
+      </div>
+      <div class="facility-sub-2">
+        <h2 class="facility-sub-h2">ベースアップ評価料算定について</h2>
+        <p class="facility-desc facility-desc--mt16">当院では、診療報酬改定により新設された「ベースアップ評価料」を算定しております。</p>
+        <p class="facility-desc facility-desc--mt16">本評価料は、医療従事者の処遇（給与等）改善を行い、患者様により質の高い医療を安全に提供できる体制を整えることを目的としています。</p>
+        <p class="facility-desc facility-desc--mt16">これに伴い、診療費の一部にご負担が生じる場合がございますが、皆様からいただく収益は当院で働くスタッフの賃上げのために全額充当させていただきます。</p>
+        <p class="facility-desc facility-desc--mt16">何卒ご理解とご協力を賜りますようお願い申し上げます。</p>
+        <div class="facility-signoff">医療法人山田クリニック<br>院長　山田敬行</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="foot-row">
     <div>
-      <div style="font-size:17px;font-weight:500;letter-spacing:.12em;color:#fff;">山田クリニック</div>
-      <div style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.4em;color:#8fa39b;margin-top:8px;">YAMADA CLINIC</div>
-      <div style="margin-top:22px;font-size:16px;line-height:2;color:#aeb9b3;">〒572-0084 大阪府寝屋川市香里南之町10-22<br>TEL 072-831-3917</div>
+      <div class="foot-brand-name">山田クリニック</div>
+      <div class="foot-brand-en">YAMADA CLINIC</div>
+      <div class="foot-addr">〒572-0084 大阪府寝屋川市香里南之町10-22<br>TEL 072-831-3917</div>
     </div>
-    <div style="display:flex;gap:60px;font-size:16px;line-height:2.3;color:#b9c3bd;">
-      <div style="display:flex;flex-direction:column;gap:6px;"><div style="color:#7f9a91;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;margin-bottom:4px;">CLINIC</div><a href="about.html#message" style="transition:color .3s ease;" style-hover="color:#fff">当院について</a><a href="about.html#doctor" style="transition:color .3s ease;" style-hover="color:#fff">院長紹介</a><a href="about.html#equipment" style="transition:color .3s ease;" style-hover="color:#fff">設備紹介</a></div>
-      <div style="display:flex;flex-direction:column;gap:6px;"><div style="color:#7f9a91;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;margin-bottom:4px;">VISIT</div><a href="first-visit.html" style="transition:color .3s ease;" style-hover="color:#fff">はじめての方へ</a><a href="index.html#hours" style="transition:color .3s ease;" style-hover="color:#fff">診察時間</a><a href="first-visit.html#access" style="transition:color .3s ease;" style-hover="color:#fff">アクセス</a></div>
-    </div>
+    <nav class="foot-links">
+      <div class="foot-col">
+        <div class="foot-col-title">CLINIC</div>
+        <a href="about.html#message">当院について</a>
+        <a href="about.html#doctor">院長紹介</a>
+        <a href="about.html#equipment">設備紹介</a>
+      </div>
+      <div class="foot-col">
+        <div class="foot-col-title">VISIT</div>
+        <a href="first-visit.html">はじめての方へ</a>
+        <a href="index.html#hours">診察時間</a>
+        <a href="first-visit.html#access">アクセス</a>
+      </div>
+    </nav>
   </div>
-  <div style="max-width:1180px;margin:26px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
-    <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:12px;color:#9aa39e;"><a href="privacy.html" style="transition:color .3s ease;" style-hover="color:#fff">情報セキュリティ基本方針</a><a href="facility.html" style="transition:color .3s ease;" style-hover="color:#fff">施設基準</a></div>
-    <div style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;color:#7d8a83;">© 2026 YAMADA CLINIC</div>
+  <div class="foot-bottom">
+    <div class="foot-legal">
+      <a href="privacy.html">情報セキュリティ基本方針</a>
+      <a href="facility.html">施設基準</a>
+    </div>
+    <div class="foot-copy">© 2026 YAMADA CLINIC</div>
   </div>
 </footer>
+
 </x-dc>
 </body>
 </html>

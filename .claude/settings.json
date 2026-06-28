@@ -32,7 +32,9 @@
       "WebSearch",
       "Bash(mkdir -p \"/Users/hidetaka/Downloads/dist 2/.claude/skills/convert-webp\")",
       "Edit(/.claude/skills/convert-webp/**)",
-      "Bash(rm -rf \"/Users/hidetaka/Downloads/dist 2/.claude/commands\")"
+      "Bash(rm -rf \"/Users/hidetaka/Downloads/dist 2/.claude/commands\")",
+      "WebFetch(domain:80da.jp)",
+      "Bash(curl -s \"https://80da.jp/test/\")"
     ],
     "additionalDirectories": [
       "/tmp",

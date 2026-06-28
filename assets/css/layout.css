@@ -2,7 +2,7 @@
 /* .hd has no z-index (auto) → no isolated stacking context → children's mix-blend-mode
    blends against the root context (KV images).  CTA button has no blend mode → solid fill. */
 .hd{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:28px var(--container-px)}
-.hd-brand{display:flex;align-items:center;gap:13px;mix-blend-mode:difference}
+.hd-brand{display:flex;align-items:center;gap:13px;position:relative;z-index:1;mix-blend-mode:difference}
 .hd-brand-text{line-height:1.35}
 .hd-brand-name{display:block;font-size:16px;font-weight:500;letter-spacing:.12em;color:#fff}
 .hd-brand-en{display:block;font-family:var(--f-en);font-size:9px;letter-spacing:.36em;color:#fff}
@@ -12,7 +12,7 @@
 .hd-nav a:hover{opacity:.6}
 .hd-cta{background:#2f3d37;color:#fff;border:1px solid #2f3d37;padding:12px 24px;border-radius:999px;font-size:13.5px;letter-spacing:.06em;transition:background .35s ease,border-color .35s ease}
 .hd-cta:hover{background:#7f9a91;border-color:#7f9a91}
-.hd-toggle{display:none;align-items:center;gap:9px;cursor:pointer;mix-blend-mode:difference}
+.hd-toggle{display:none;align-items:center;gap:9px;cursor:pointer;position:relative;z-index:1;mix-blend-mode:difference}
 .hd-bars{display:flex;flex-direction:column;gap:5px}
 .hd-bars i{display:block;width:24px;height:2px;background:#fff}
 .hd-blabel{font-size:11px;letter-spacing:.1em;color:#fff}
@@ -154,7 +154,7 @@
   .hd2-nav,.hd2-cta{display:none}
   .hd2-toggle{display:flex}
   .hd2{padding:14px var(--container-px)}
-  .hero{height:auto;min-height:0;overflow:visible;background:#fff;isolation:isolate}
+  .hero{height:auto;min-height:0;overflow:visible;background:#fff}
   .kv-stage{position:relative;height:64vh;min-height:480px;overflow:hidden}
   .kv-img{background-position:center top}
   #kv1{background-image:url('../images/kv/kv-1-sp.webp')}

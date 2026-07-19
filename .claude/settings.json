@@ -42,7 +42,9 @@
       "Bash(sips -Z 240 \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\" --out \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.jpg\")",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.jpg\")",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\")",
-      "Bash(sips -Z 360 \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\" --out \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.jpg\")"
+      "Bash(sips -Z 360 \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\" --out \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.jpg\")",
+      "Bash(git rm *)",
+      "Bash(git add *)"
     ],
     "additionalDirectories": [
       "/tmp",

@@ -35,6 +35,7 @@
     initHashNav();
     initStickyHeader();
     initKvSlider();
+    initExpiredNotices();
   }
 
   /* ── Hash anchor navigation (84px offset for fixed header) ─────── */
@@ -103,6 +104,17 @@
       slides[cur].classList.remove('is-active');
       cur = next;
     }, 5200);
+  }
+
+  /* ── Auto-hide notices past their expiry date ───────────────────── */
+  function initExpiredNotices() {
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    document.querySelectorAll('[data-expires]').forEach(function (el) {
+      var expiry = new Date(el.dataset.expires);
+      expiry.setHours(23, 59, 59, 999);
+      if (today > expiry) el.style.display = 'none';
+    });
   }
 
 })();

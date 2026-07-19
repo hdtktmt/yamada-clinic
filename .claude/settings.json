@@ -34,7 +34,15 @@
       "Edit(/.claude/skills/convert-webp/**)",
       "Bash(rm -rf \"/Users/hidetaka/Downloads/dist 2/.claude/commands\")",
       "WebFetch(domain:80da.jp)",
-      "Bash(curl -s \"https://80da.jp/test/\")"
+      "Bash(curl -s \"https://80da.jp/test/\")",
+      "Bash(find \"/Users/hidetaka/Downloads\" -maxdepth 3 -name \"*.png\" -o -name \"*.jpg\" | grep -i \"security\\\\|action\\\\|ipa\\\\|2star\\\\|2-star\" 2>/dev/null; ls \"/Users/hidetaka/Downloads/\" | head -20)",
+      "Bash(sips -s format webp \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\" --out \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.webp\")",
+      "Bash(cwebp -q 85 \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\" -o \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.webp\")",
+      "Bash(ffmpeg -i \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\" \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.webp\")",
+      "Bash(sips -Z 240 \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\" --out \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.jpg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\")",
+      "Bash(sips -Z 360 \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\" --out \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.jpg\")"
     ],
     "additionalDirectories": [
       "/tmp",

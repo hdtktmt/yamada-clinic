@@ -103,6 +103,13 @@ input.navtoggle{display:none}
 .facility-li-dot{color:var(--c-green)}
 .facility-signoff{margin-top:24px;font-size:16px;line-height:2;color:var(--c-body)}
 
+/* ===== security action badge (privacy.html) ===== */
+.sa-badge{display:flex;align-items:center;gap:28px;margin-top:44px;padding:26px 30px;border:1px solid var(--c-border);border-radius:2px}
+.sa-mark{flex:none;width:100px;height:100px;background:url('../images/common/security-action-2star.jpg') center/contain no-repeat}
+.sa-title{font-size:15px;font-weight:500;letter-spacing:.06em;color:var(--c-dark);margin-bottom:8px}
+.sa-desc{font-size:14px;line-height:1.85;color:var(--c-desc)}
+@media (max-width:500px){.sa-badge{flex-direction:column;gap:18px}}
+
 /* ===== privacy.html specific ===== */
 .policy-list{margin-top:48px;display:flex;flex-direction:column;gap:36px}
 .policy-title{font-size:18px;letter-spacing:.04em;color:var(--c-dark);margin-bottom:10px}

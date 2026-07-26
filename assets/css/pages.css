@@ -74,7 +74,7 @@
 .eq-ph-abi{background:#e8eeeb url('../images/facility/equipment-abi.webp') center/cover no-repeat}
 .eq-ph-bca{background:#edf1ef url('../images/facility/equipment-bca.webp') center/cover no-repeat}
 .eq-ph-diabetes{background:#eef2f0 url('../images/facility/equipment-diabetes.webp') center/cover no-repeat}
-.eq-ph-echo{background:linear-gradient(160deg,#e8eeeb,#d4ded9)}
+.eq-ph-echo{background:#e8eeeb url('../images/facility/equipment-echo.webp') center/cover no-repeat}
 .eq-name{font-size:18px;margin:18px 0 8px}
 .eq-desc{font-size:16px;line-height:1.85;color:var(--c-desc)}
 .eq-note{font-size:11px;line-height:1.6;color:var(--c-sub);margin-top:6px}

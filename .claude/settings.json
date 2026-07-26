@@ -44,13 +44,21 @@
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\")",
       "Bash(sips -Z 360 \"/Users/hidetaka/Downloads/security_action_futatsuboshi-large_bw.jpg\" --out \"/Users/hidetaka/Downloads/dist 2/assets/images/common/security-action-2star.jpg\")",
       "Bash(git rm *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(ls -lt \"/Users/hidetaka/Downloads/\" | head -15)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/hidetaka/Downloads/20676.jpg\")",
+      "Bash(cp \"/Users/hidetaka/Downloads/20676.jpg\" \"/Users/hidetaka/Downloads/dist 2/assets/images/facility/equipment-echo.jpg\" && ls -lh \"/Users/hidetaka/Downloads/dist 2/assets/images/facility/equipment-echo.jpg\")",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/hidetaka/Downloads/20676.jpg'\\); img = img.resize\\(\\(1440, 1080\\), Image.LANCZOS\\); img.save\\('/Users/hidetaka/Downloads/dist 2/assets/images/facility/equipment-echo.webp', 'WEBP', quality=85\\); print\\('OK'\\)\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/hidetaka/Downloads/dist 2/assets/images/facility/equipment-echo.webp\")"
     ],
     "additionalDirectories": [
       "/tmp",
       "/Users/hidetaka/Downloads/dist 2/.claude",
       "/Users/hidetaka/Downloads/dist 2/.claude/skills",
-      "/Users/hidetaka/Downloads/dist 2/.claude/commands"
+      "/Users/hidetaka/Downloads/dist 2/.claude/commands",
+      "/Users/hidetaka/Downloads"
     ]
   }
 }
